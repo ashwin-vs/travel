@@ -1,0 +1,18 @@
+.head-img{
+  height: 30%;
+  width: 25vh
+}
+.nav-link{
+  color: black;
+  font-size: small;
+  padding-right: 30px;
+}
+li{
+  font-style: none;
+  text-decoration: none;
+  font-size: smaller;
+  list-style-type: none;
+}
+a{
+  color: white;
+}
