@@ -58,7 +58,7 @@ li{
   font-weight: 600;
 }
 .c1{
-  border-radius: 20px;
+  border-radius: 10px;
   
 }
 .s1{
@@ -239,3 +239,42 @@ li{
 .card-text{
   font-size: smaller;
 }
+.mr-3{
+  height: 25%;
+  width: 20%;
+}
+.v123{
+  background-image: url("https://i.postimg.cc/yYdqB0nk/image.png");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.tt{
+  font-size: 10px;
+}
+.bg-white{
+  border-radius: 5px;
+}
+.mnl{
+  font-weight: bolder;
+  font-size: 40px;
+}
+.car1{
+  margin: .25rem;
+  border-radius: 5px;
+}
+.q1{
+  font-size: 10px;
+}
+.pe-1{
+  height: 100%;
+}
+.mk{
+  flex-direction: row;
+}
+.w-100{
+  margin-left: .25rem;
+}
+
+

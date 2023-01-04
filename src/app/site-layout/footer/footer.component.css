@@ -1,0 +1,20 @@
+.head-img{
+    height: 50%;
+    width: 50%
+  }
+  .ff{
+      font-size: smaller;
+      color: white;
+      /* text-align: center; */
+  }
+  .fff{
+      color: white;
+      /* text-align: center; */
+  }
+  ul li{
+      list-style: none;
+  }
+  .ft{
+      border: 1px solid white;
+      border-radius: 2px;
+  }

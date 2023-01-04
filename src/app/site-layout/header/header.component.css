@@ -16,3 +16,36 @@ li{
 a{
   color: white;
 }
+.span{
+  color:#121E7E; ;
+}
+.form-control{
+  height: 30px;
+}
+.btns{
+  background-color: #121E7E;
+  color: white;
+  height: 30px;
+  text-align: center;
+  border: none;
+  font-size: small;
+}
+.btns:hover{
+  color: #121E7E;
+  background-color: white;
+  border: 1px solid #121E7E;
+}
+::placeholder{
+  font-size: small;
+}
+.po{
+  font-size: small;
+}
+.poo{
+  font-size: small;
+}
+.pom{
+  color: #121E7E;
+  font-size: small;
+
+}
