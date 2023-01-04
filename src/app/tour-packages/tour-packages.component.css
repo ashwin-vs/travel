@@ -35,10 +35,57 @@
       font-weight: 100;
   }
 .d1{
-    font-size: small;
+    font-size: smaller;
 }
 li{
     width: 100%;
     margin-right: .25rem;
     list-style: none;
+}
+
+.cc{
+    background-color: aliceblue;
+}
+.card{
+    border: none;
+}
+.c1{
+    font-weight: bold;
+}
+
+.c2{
+    background-color:  #fff;;
+}
+.c3{
+    color: white;
+}
+/* .c4{
+   background-image:url('https://i.postimg.cc/4xCsWYMF/image.png ') ;
+
+   background-size: cover;
+   background-repeat: no-repeat;
+   display: flex;
+} */
+.c4{
+    width: 100%;
+    height: 100%;
+}
+.c5{
+    font-weight: 700;
+    font-size: 35px;
+}
+.btns{
+    background-color: inherit;
+   
+    color: white;
+    border: 1px white solid;
+
+    border-radius: 20px;
+    text-align: center;
+}
+.c6{
+    background: #4756CB;
+}
+.fa-solid{
+    font-size: smaller;
 }
