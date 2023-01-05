@@ -1,37 +1,41 @@
 <section class="s1 ">
-    <div class="container pt-2  px-5">
+    <div class="container pt-2  ">
         <div class="text-center">
-            <small class="">Kochi To Dubai Return Flights (KCZ to DXB) Fri, 18 Nov - Sat, 26 Nov | 1 Adult Modify Search</small>
+            <small class="">Kochi To Dubai Return Flights (KCZ to DXB) Fri, 18 Nov - Sat, 26 Nov | 1 Adult Modify
+                Search</small>
         </div>
         <div class=" c1  ">
 
             <div class="row   pt-2 ">
-    
-                <ul class="d-lg-flex m-0 d-block  px-5">
-                    <li class="pe-3">
-                        <img class="c2" src="https://i.postimg.cc/g0v63R97/image.png" alt=""> <label for="">&nbsp; Flights</label>
-    
+
+                <ul class="d-lg-flex m-0   d-block  px-5">
+                    <li class="pe-3 pl-3 pl-lg-2">
+                        <img class="c2" src="https://i.postimg.cc/g0v63R97/image.png" alt=""> <label for="">&nbsp;
+                            Flights</label>
+
                     </li>
-                    <li class="pt-1 pe-3">
+                    <li class="pt-1 pl-3 pl-lg-0 pe-3">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
                                 checked>
-                            <label (click)="onTabClick('Account Details')" [class.active]="activeTab == 'Account Details'"
-                                class="form-check-label" for="flexRadioDefault1">
+                            <label (click)="onTabClick('Account Details')"
+                                [class.active]="activeTab == 'Account Details'" class="form-check-label"
+                                for="flexRadioDefault1">
                                 Round Trip
                             </label>
                         </div>
                     </li>
-                    <li class="pe-3 pt-1">
+                    <li class="pe-3 pl-3 pl-lg-0 pt-1">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                            <label (click)="onTabClick('personal details')" [class.active]="activeTab == 'personal details'"
-                                class="form-check-label" for="flexRadioDefault2">
+                            <label (click)="onTabClick('personal details')"
+                                [class.active]="activeTab == 'personal details'" class="form-check-label"
+                                for="flexRadioDefault2">
                                 One way
                             </label>
                         </div>
                     </li>
-                    <li class="pe-3 pt-1">
+                    <li class="pe-3 pl-3 pl-lg-0 pt-1">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                             <label (click)="onTabClick('other details')" [class.active]="activeTab == 'other details'"
@@ -40,13 +44,13 @@
                             </label>
                         </div>
                     </li>
-                    <li class="pe-3 pt-1">
+                    <li class="pe-3 pl-3 pl-lg-0 pt-1">
                         <div class="dropdown">
                             <a class=" dropdown-toggle c1" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Economy
                             </a>
-    
+
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -54,13 +58,13 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="pt-1">
+                    <li class="pt-1 pl-3 pl-lg-0">
                         <div class="dropdown">
                             <a class=" dropdown-toggle c1" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Traveller
                             </a>
-    
+
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -69,96 +73,86 @@
                         </div>
                     </li>
                 </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                <div *ngIf="activeTab == 'Account Details'" class="w-100 px-4">
+
+
+
+
+
+
+
+
+
+
+                <div *ngIf="activeTab == 'Account Details'" class=" px-4">
                     <div class="container text-center col-lg-12">
-                        <!-- <div class="row    g-0">
-                            <div class="col col-12 col-lg  p-3 w-100">
-                                <input type="text" class=" form-control su  " placeholder="Departing from">
-                            </div>
-                            <div class="col col-12 col-lg p-3">
-                                <input type="text" class="form-control su  " placeholder="Going to">
-                            </div>
-                            <div class="col p-3">
-                                <input type="date" class="form-control su ">
-                            </div>
-                            <div class="col col-12 col-lg p-3">
-                                <input type="date" class="form-control su  ">
-                            </div>
-    
-                            <div class="col col-12 col-lg p-3">
-                                <div class="btn  w-100">Search</div>
-                            </div>
-    
-                        </div> -->
+
                         <ul class="d-lg-flex  d-block  mk col-lg-12">
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                    placeholder="Departing from">
                             </li>
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                    placeholder="Going to">
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su  ">
                             </li>
                             <li class="w-100 pt-2 pt-lg-0">
-                                <div class="btn  w-100">Search</div>
+                                <div class="btn btna  w-100">Search</div>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div *ngIf="activeTab == 'personal details'" class="w-100 px-4">
+                <div *ngIf="activeTab == 'personal details'" class=" px-4">
                     <div class="container text-center">
                         <ul class="d-lg-flex  d-block  mk col-lg-12">
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                    placeholder="Departing from">
                             </li>
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                    placeholder="Going to">
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                             </li>
-                            
+
                             <li class="w-100 pt-2 pt-lg-0">
-                                <div class="btn  w-100">Search</div>
+                                <div class="btna btn  w-100">Search</div>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div *ngIf="activeTab == 'other details'" class="w-100 px-4">
+                <div *ngIf="activeTab == 'other details'" class=" px-4">
                     <div class="container text-center ">
                         <div class="row">
                             <div class="col-lg-9">
                                 <ul class="d-lg-flex  d-block  mk col-lg-12">
-                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                            placeholder="Departing from">
                                     </li>
-                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                            placeholder="Going to">
                                     </li>
                                     <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                                     </li>
-                                    
-                                   
+
+
                                 </ul>
                                 <ul class="d-lg-flex  d-block  mk col-lg-12">
-                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                            placeholder="Departing from">
                                     </li>
-                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                            placeholder="Going to">
                                     </li>
                                     <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                                     </li>
-                                    
-                                    
+
+
                                 </ul>
                             </div>
-    
-                            <div class="col-lg-3 pt-lg-3">
-                                <div class="btn   w-100">Search</div>
+
+                            <div class="col-lg-3  pt-lg-3">
+                                <div class="btna btn  w-100">Search</div>
                             </div>
                         </div>
                     </div>
@@ -166,12 +160,97 @@
             </div>
         </div>
     </div>
-</section><br><br>
+</section>
+
+
+<div class="container px-lg-5  py-3">
+    <div> <small class="sml">Home<span>-></span> International flight round trip <span>-></span>Kochi to dubai return
+            flights</small>
+    </div>
+    <div class="pt-5">
+        <h5 style="font-weight: bold;">All Flights</h5>
+    </div>
+</div>
 
 
 
-<!-- <div class="col-12 light-border px-lg-5">
-    <ul class="flight-list px-lg-5">
+<div class="container  px-lg-5">
+
+    <div class="table-responsive vv">
+        <table class="table table-borderless">
+            <thead class="thd">
+                <tr class="tng">
+                    <th scope="col">Airline</th>
+                    <th scope="col">Depart</th>
+                    <th scope="col">Stops</th>
+                    <th scope="col">Arrive</th>
+                    <th scope="col">Duration</th>
+
+                    <th scope="col">Price</th>
+
+                </tr>
+            </thead>
+            <tbody class="tbd ">
+                <tr class="vvv">
+                    <th class="" scope="row"><img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt=""></th>
+                    <td>
+                        <div>11.45 kcz</div>
+                        <div class="pt-4">11.45 kcz</div>
+                    </td>
+                    <td>
+                        <div>1 stop HND 9hr 30min</div>
+                        <div class="pt-4">1 stop HND 9hr 30min</div>
+                    </td>
+                    <td>
+                        <div>5:30 DXB</div>
+                        <div class="pt-4">5:30 DXB</div>
+                    </td>
+                    <td>
+                        <div> 22hr 45min</div>
+                        <div class="pt-4"> 22hr 45min</div>
+                    </td>
+                    <td class="">
+                        <div style="font-size: 17px; font-weight: 700;">RS.12000</div>
+                        <div><button class="btn btnb btn-primary">BOOK</button></div>
+                    </td>
+                </tr>
+
+                <tr class="vvv">
+                    <th class="" scope="row"><img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt=""></th>
+                    <td>
+                        <div>11.45 kcz</div>
+                        <div class="pt-4">11.45 kcz</div>
+                    </td>
+                    <td>
+                        <div>1 stop HND 9hr 30min</div>
+                        <div class="pt-4">1 stop HND 9hr 30min</div>
+                    </td>
+                    <td>
+                        <div>5:30 DXB</div>
+                        <div class="pt-4">5:30 DXB</div>
+                    </td>
+                    <td>
+                        <div> 22hr 45min</div>
+                        <div class="pt-4"> 22hr 45min</div>
+                    </td>
+                    <td class="">
+                        <div style="font-size: 17px; font-weight: 700;">RS.12000</div>
+                        <div><button class="btn btnb btn-primary">BOOK</button></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br><br>
+
+
+
+
+
+
+<!-- < class="col-12 light-border">
+    <ul class="flight-list">
         <li>
             <ul class="form-row titlebar">
                 <li class="col-md-2 text-center">Airline</li>
@@ -221,7 +300,7 @@
                 </li>
                 <li data-th="Price" class="main-dtls col-md-2 d-flex flex-column align-items-md-center mb-md-0 mb-2">
                     <div class="price-dtls mb-md-0 mb-2">Rs. <strong>154964</strong></div>
-                    <button class="btn btn-typ3 w-100" fdprocessedid="1bnptk">BOOK</button>
+                    <button class="btn btn-typ3 w-100" fdprocessedid="kswv2">BOOK</button>
                 </li>
             </ul>
             <div class="form-row panel flight-details-tab-wrap">
@@ -456,7 +535,7 @@
                 </li>
                 <li data-th="Price" class="main-dtls col-md-2 d-flex flex-column align-items-md-center mb-md-0 mb-2">
                     <div class="price-dtls mb-md-0 mb-2">Rs. <strong>154964</strong></div>
-                    <button class="btn btn-typ3 w-100" fdprocessedid="u4wr3o">BOOK</button>
+                    <button class="btn btn-typ3 w-100" fdprocessedid="eesnpb">BOOK</button>
                 </li>
             </ul>
             <div class="form-row panel flight-details-tab-wrap">
@@ -653,54 +732,3 @@
         </li>
     </ul>
 </div> -->
-
-
-
-
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Handle</th>
-
-              <th scope="col">Handle</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Handle</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              
-          </tbody>
-    </table>
-  </div>
-
-
-
-

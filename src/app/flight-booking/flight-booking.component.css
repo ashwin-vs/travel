@@ -1,12 +1,12 @@
 .s1{
-    background-color:#121E7E;
+    background-color:#070F4E;
     color: white;
 }
 .card{
-    background-color: #121E7E;
+    background-color: #070F4E;;
 }
-.btn{
-    background-color:#121E7E;
+.btna{
+    background-color:#070F4E;
     color: white;
     border: white 2px solid;
   }
@@ -36,8 +36,46 @@
   .w-100{
     margin-left: .25rem;
   }
-  
+  th{
+    font-size: small;
+    font-weight: 400;
+  }
+  td{
+    font-size: small;
+  }
+  .thd{
+    background: #ECEDF4;
+    text-align: center;
+  }
+  .tbd{
+    margin-top: auto;
+    text-align: center;
+    
+  }
+  .vv{
+    border-top: 1px solid lightgray;
+   
+    border-bottom: none;
 
+
+  }
+.vvv{
+  border-bottom: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+.btnb{
+  font-size: small;
+  width: 100%;
+}
+.tng{
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+
+}
+.sml{
+  color: gray;
+}
 
 
 
