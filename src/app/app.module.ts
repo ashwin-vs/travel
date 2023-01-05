@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SiteLayoutModule } from './site-layout/site-layout.module';
 import { TourPackagesComponent } from './tour-packages/tour-packages.component';
+import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TourPackagesComponent
+    TourPackagesComponent,
+    FlightBookingComponent
   ],
   imports: [
     BrowserModule,
