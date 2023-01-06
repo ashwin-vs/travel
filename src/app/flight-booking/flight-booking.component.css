@@ -50,12 +50,13 @@
   .tbd{
     margin-top: auto;
     text-align: center;
+    border-top: 1px solid lightgray;
     
   }
   .vv{
-    border-top: 1px solid lightgray;
+    border: 1px solid lightgray;
    
-    border-bottom: none;
+    /* border-bottom: none; */
 
 
   }
@@ -76,8 +77,42 @@
 .sml{
   color: gray;
 }
-
-
+.vb{
+  color: gray;
+  font-size: small;
+}
+.bnm{
+  border: none;
+  background-color: inherit;
+  color: gray;
+}
+.bnm:hover{
+  color: #070F4E;
+}
+.active1{
+  color: #070F4E;
+}
+.active::after {
+  transform: scaleX(1);
+}
+.bvc{
+  font-size: smaller;
+}
+.a12{
+  background-color:#ECEDF4 ;
+}
+.bdr-b {
+  border-bottom: 1px solid #D2D3DD;
+}
+.nht{
+  background: #b1b1b1;
+}
+.bg-f0f3f5 {
+  background: #f0f3f5;
+}
+.bdr {
+  border: 1px solid #D2D3DD;
+}
 
 
   /* .form-row>[class*=col-] {

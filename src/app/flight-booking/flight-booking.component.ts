@@ -16,8 +16,11 @@ export class FlightBookingComponent implements OnInit {
   onTabClick(tab:any){
     this.activeTab = tab;
   }
-  activeTab1:string ='Personal Details1'
-  onTabClick1(tab1:any){
-    this.activeTab1=tab1;
+ 
+  activeTab4:string = 'true';
+  onTabClick4(tab4:any){
+    this.activeTab4 = tab4;
   }
+  
+ 
 }
