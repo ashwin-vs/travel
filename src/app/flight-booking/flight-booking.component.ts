@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightBookingComponent implements OnInit {
 
+  showMe:Boolean=true
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +22,8 @@ export class FlightBookingComponent implements OnInit {
   onTabClick4(tab4:any){
     this.activeTab4 = tab4;
   }
-  
  
+ close(){
+   this.onTabClick4==null
+ }
 }

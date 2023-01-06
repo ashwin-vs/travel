@@ -9,8 +9,8 @@
             <div class="row   pt-2 ">
 
                 <ul class="d-lg-flex m-0   d-block  px-5">
-                    <li class="pe-3 pl-3 pl-lg-2">
-                        <img class="c2" src="https://i.postimg.cc/g0v63R97/image.png" alt=""> <label for="">&nbsp;
+                    <li class="pe-3 pl-3 pl-lg-2 pt-lg-1">
+                        <i class="fa-solid fa-plane p-0"></i> <label for="">&nbsp;
                             Flights</label>
 
                     </li>
@@ -225,13 +225,13 @@
         </table>
         <div class="container">
             <div class="row  ">
-                <div (click)="onTabClick4('Personal Details3')" class="col-4 vb text-lg-center ">
+                <div (click)="onTabClick4('Personal Details3')" class="col-4 vb text-lg-center text-md-center m-auto ">
                     <button [class.active1]="activeTab4 == 'Personal Details3'" class="bnm "> Flight details</button>
                 </div>
-                <div (click)="onTabClick4('Personal Details4')" class="col-4 vb text-lg-center">
+                <div (click)="onTabClick4('Personal Details4')" class="col-4 vb text-lg-center text-md-center m-auto">
                     <button [class.active1]="activeTab4 == 'Personal Details4'" class="bnm">Fare details</button>
                 </div>
-                <div (click)="onTabClick4('Personal Details5')" class="col-4 vb text-lg-center">
+                <div (click)="onTabClick4('Personal Details5')" class="col-4 vb text-lg-center text-md-center">
                     <button [class.active1]="activeTab4 == 'Personal Details5'" class="bnm"> Baggage details</button>
                 </div>
             </div>
@@ -241,7 +241,7 @@
     </div>
 
     <div *ngIf="activeTab4 == 'Personal Details3'" class=" pb-4 container a12 ">
-        <div class="text-end bvc"> <button type="button" class="btn-close bvc"> </button></div>
+        <div class="text-end bvc"> <button (click)="onTabClick4('Personal Details8')" type="button" class="btn-close bvc"> </button></div>
         <div class="row pt-2">
             <div class="col-lg-6">
                 <div class="bvc">
@@ -291,7 +291,7 @@
 
     <!-- tab 2 -->
     <div *ngIf="activeTab4 == 'Personal Details4'" class="pb-4  a12">
-        <div class="text-end bvc"> <button type="button" class="btn-close bvc"> </button></div>
+        <div class="text-end bvc"> <button  (click)="onTabClick4('Personal Details8')"   type="button" class="btn-close bvc"> </button></div>
 
         <div class="row">
             <div class="col-md-5">
@@ -382,7 +382,7 @@
 
     <div *ngIf="activeTab4 == 'Personal Details5'" class="a12">
         <div class="tab-pane p-lg-5 pt-5 p-3 pane3 active">
-            <button class="close"><span>×</span></button>
+            <div class="text-end bvc"> <button  (click)="onTabClick4('Personal Details8')"   type="button" class="btn-close bvc"> </button></div>
             <ul class="fs-13">
                 <li class="text-left p-1 bdr-b">
                     Cochin <span class="right-arrow-small arrow-000000">-></span> Cochin
