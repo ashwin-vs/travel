@@ -1,0 +1,209 @@
+<section class="cc">
+    <div class="container">
+        <div class="text-white text-center pb-0 pt-4">
+            <h5>Book Your Flight In Simple 4 Steps</h5>
+        </div>
+    </div>
+    <div class="step-wizard container px-lg-5 pt-3 px-0 ">
+        <ul class="step-wizard-list container-lg px-lg-5 px-0">
+            <li class="step-wizard-item ">
+                <span class="progress-count">1</span>
+                <span class="progress-label">Review Booking</span>
+            </li>
+            <li class="step-wizard-item ">
+                <span class="progress-count ">2</span>
+                <span class="progress-label">Sign In</span>
+            </li>
+            <li class="step-wizard-item ">
+                <span class="progress-count ">3</span>
+                <span class="progress-label">Traveller detail</span>
+            </li>
+            <li class="step-wizard-item current-item">
+                <span class="progress-count">4</span>
+                <span class="progress-label">Payment</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="container px-lg-5 pt-5">
+    <div class="txt"><b> My Booking</b>
+
+    </div>
+</div>
+
+
+
+<div class="container px-lg-5  pt-5 ">
+    <div class="sc1 s2">
+        <div class="booking-step-container booking-step-2">
+            <div class="booking-step mb-4 bdr-b4">
+                <ul class="form-row  fs-15 mt-md-3 mt-2    bdr-none">
+                    <li class="col-md-1 text-center mb-md-0 mb-2">
+                        <img src="http://35.89.179.187/travelsite/images/ana-logo.png" alt="">
+                    </li>
+                    <li class="col-md-3 mb-md-0 mb-2">
+                        <strong class="fw-500 d-block">All Nippon Airlines</strong>
+                        Flight No - <span>NH 1604</span>
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <strong class="fw-500">KCZ</strong> 13 Nov 08:40
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <strong class="fw-500">DXB</strong> 13 Nov 08:40
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <div>1 stop</div>
+                        26hr 5m
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <strong class="d-block lgt-b">RS.128389</strong>
+                        1 adult
+                        Fare Details
+                    </li>
+                </ul>
+            </div>
+            <div class="booking-step">
+                <ul class="form-row fs-15 mt-md-3 mt-2">
+                    <li class="col-md-1 text-center mb-md-0 mb-2">
+                        <img src="http://35.89.179.187/travelsite/images/emirates-small-logo.png" alt="">
+                    </li>
+                    <li class="col-md-3 mb-md-0 mb-2">
+                        <strong class="fw-500 d-block">Emirates Airline</strong>
+                        Flight No - <span>EK 316</span>
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <strong class="fw-500">DXB</strong> 13 Nov 08:40
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <strong class="fw-500">KCZ</strong> 13 Nov 08:40
+                    </li>
+                    <li class="col-md-2 mb-md-0 mb-2">
+                        <div>1 stop</div>
+                        24hr 5m
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container px-lg-5 pt-5">
+    <div class="txt"><b> Payment</b>
+
+    </div>
+</div>
+
+<div class="container pt-2 px-lg-5">
+    <div class="bdr-b5">
+        <!-- <div class="row justify-content-center ">
+        <div class="col-12">
+            <div class="row justify-content-between">
+                <div class="col-md-4 text-md-end text-start p-0">
+                    <p>Avail discounts & offers</p>
+                </div>
+                <div class="col-md-4 p-0 w-100">
+                    <input class="w-100" placeholder="promocode" type="text">
+                </div>
+                <div class="col-md-4 p-0">
+                    <button class="text-md-start p-0 w-100">Apply promo code</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+        <div class="form-row  pt-4  justify-content-center align-items-center mb-3 mb-md-4">
+            <div class="col-md-4 ss text-md-right mb-md-0 mb-2">Avail Discounts &amp; Offers</div>
+            <div class="col-md-4   mb-md-0 mb-2">
+                <input type="text" class="form-control  ss" placeholder="Promo Code" fdprocessedid="hgd5aa">
+            </div>
+            <div class="col-md-4  mb-md-0 mb-2">
+                <button class="btn ss btn-primary btn-typ3 fs-15 fw-600 pt-1 pb-1 pl-4 pr-4"
+                    fdprocessedid="11gtlm">Apply Promo Code</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row px-lg-5">
+                <div class="col-md-4 p-0">
+                    <ul class="ps-0 ps-md-4">
+                        <li (click)="onTabClick('personal details')" [class.active]="activeTab == 'personal details'"
+                            class="ss2">UPI</li>
+                        <li (click)="onTabClick('personal details2')" [class.active]="activeTab == 'personal details2'"
+                            class="ss2">Net Banking</li>
+                        <li class="ss2">Debit Card</li>
+                        <li class="ss2">Credit Card</li>
+                        <li class="ss2">Gift Card</li>
+                    </ul>
+                </div>
+                <div class="col-md-8 p-0">
+                    <div class="active1 pb-5" *ngIf="activeTab == 'personal details'">
+                        <div class="active2 pt-5"><span>We Accept </span> <img class="ac1"
+                                src="https://i.postimg.cc/wBJyyKPF/image.png" alt=""></div>
+                        <div class="pt-4 active2">
+                            <p class="active2">Card used for the payment needs to be of traveller.</p>
+                        </div>
+                        <div class="active2">
+                            VPA <input type="text">
+                        </div>
+                        <div class="form-check active2 pt-3">
+                            <input class="form-check-input ss8 " type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label active4" for="flexCheckDefault">
+                                I understand and agree with the rules and restrictions of this fare,the Booking Policy
+                                and
+                                the Terms & Conditions of Travel Site
+                            </label>
+                        </div>
+                        <div class="active2 pt-4">
+                            Amount Due
+                        </div>
+                        <div class="active2 bv">
+                            <b>RS.<span>126789</span></b>
+                        </div>
+                        <div class="active2 pt-1">
+                            <button class="btn btn-primary py-0 px-4 ">Pay Now</button>
+                        </div>
+                    </div>
+                    <div class="text-center py-3">
+                        <img class="w-50  " src="https://i.postimg.cc/YS9bmBm5/image.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container ">
+            <div class="row px-0 px-md-5">
+                <div class="col-4 p-0">
+                    <div class="list-group p-0" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active " id="list-home-list" data-bs-toggle="list"
+                            href="#list-home" role="tab" aria-controls="list-home">Home</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                            href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                            href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                            href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+                    </div>
+                </div>
+                <div class="col-8 p-0">
+                    <div class="tab-content " id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                            aria-labelledby="list-home-list">...</div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel"
+                            aria-labelledby="list-profile-list">...</div>
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel"
+                            aria-labelledby="list-messages-list">...</div>
+                        <div class="tab-pane fade" id="list-settings" role="tabpanel"
+                            aria-labelledby="list-settings-list">...</div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div><br>

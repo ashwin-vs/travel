@@ -10,6 +10,9 @@ import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 import { StepOneComponent } from './step-one/step-one.component';
 import { BookingtwoComponent } from './bookingtwo/bookingtwo.component';
+import { StepThreeComponent } from './step-three/step-three.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CancellationComponent } from './cancellation/cancellation.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { BookingtwoComponent } from './bookingtwo/bookingtwo.component';
     TourPackagesComponent,
     FlightBookingComponent,
     StepOneComponent,
-    BookingtwoComponent
+    BookingtwoComponent,
+    StepThreeComponent,
+    DashboardComponent,
+    CancellationComponent,
   ],
   imports: [
     BrowserModule,
