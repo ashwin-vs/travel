@@ -1,0 +1,34 @@
+.cc{
+    height: 60px;
+    width: 60px;
+}
+.cc1{
+    background-color: 
+    #4756CB;
+    color: white;
+    /* height: 30px; */
+    /* width: 30px; */
+    font-size: smaller;
+}
+ul li{
+    list-style-type: none;
+    /* padding: 0px; */
+}
+.dd{
+    border: 1px solid black;
+}
+.cc2{
+    color: #4756CB;
+}
+.cc3{
+    font-size: small;
+    color: black;
+}
+.hello1{
+    color: black;
+}
+.active{
+    color: 
+    #4756CB;
+    font-weight: 700;
+}
