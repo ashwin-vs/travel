@@ -15,7 +15,7 @@ ul li{
     /* padding: 0px; */
 }
 .dd{
-    border: 1px solid black;
+    border: 1px solid #A3A3A3;
 }
 .cc2{
     color: #4756CB;
@@ -27,8 +27,59 @@ ul li{
 .hello1{
     color: black;
 }
-.active{
+.active2{
     color: 
     #4756CB;
     font-weight: 700;
+}
+.cc5{
+   color: #4756CB;
+   font-size: medium;
+   font-weight: 600;
+}
+
+.active{
+    color:  #4756CB !important;
+    border-bottom: 3px solid #4756CB;
+
+  }
+.tbk{
+    font-size: small;
+    text-align: start;
+   
+}
+.tng{
+    font-size: small;
+    text-align: start;
+    background-color:#E9EBF6;
+    
+}
+.vv{
+    border: 1px solid #B1A0A0;
+}
+.tbd{
+    border-top: 1px solid #B1A0A0;
+    border-bottom: none;
+}
+.btn5{
+    background-color: #2391D1;
+    color: white;
+    border: none;
+}
+.btn-typ3{
+    
+        background-color: #4756CB;;
+        color: white;
+        border: none;
+    font-size: smaller;
+}
+.btn-typ6{
+    
+    background-color: #2391D1;
+    color: white;
+    border: none;
+font-size: smaller;
+}
+.nbv{
+    color: #FF1F00;
 }

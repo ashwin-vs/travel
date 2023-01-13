@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
+  activeTab:string = 'Personal Details';
+  onTabClick(tab:any){
+    this.activeTab = tab;
+  }
   constructor(private route:Router) { }
 
   ngOnInit(): void {
