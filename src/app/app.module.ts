@@ -13,6 +13,9 @@ import { BookingtwoComponent } from './bookingtwo/bookingtwo.component';
 import { StepThreeComponent } from './step-three/step-three.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { CancellationComponent } from './cancellation/cancellation.component';
     StepThreeComponent,
     DashboardComponent,
     CancellationComponent,
+    ProfileComponent,
+    SettingsComponent,
+    EditprofileComponent,
   ],
   imports: [
     BrowserModule,

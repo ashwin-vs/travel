@@ -3,8 +3,8 @@
 </div>
 <div class="container px-lg-5 pt-3">
     <div class="row">
-        <div class="col-md-4 px-lg-5">
-            <div  class="dd">
+        <div class="col-md-4 ps-lg-5 ">
+            <div class="dd">
                 <ul class="p-0 text-center">
                     <li class="pt-3">
                         <img class="rounded-image cc" src="https://i.postimg.cc/ncXGmSN3/image.png" alt="">
@@ -16,14 +16,322 @@
                         <button class="btn cc1 " for="">My account</button>
                     </li>
                 </ul>
-                <ul> <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active" [routerLink]="['/dashboard']">Manage Booking</a></li>
-                    <li class="cc3 pt-4"><a class="hello1"  routerLinkActive="active" [routerLink]="['/cancellation']">Cancellation</a></li>
-                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active" [routerLink]="['#']">profile</a></li>
-                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active" [routerLink]="['#']">settings</a></li>
-                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active" [routerLink]="['#']">Logout</a></li>
+                <ul>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/dashboard']">Manage Booking</a></li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/cancellation']">Cancellation</a></li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/profile']">profile</a>
+                    </li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/settings']">settings</a>
+                    </li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2" [routerLink]="['#']">Logout</a>
+                    </li>
                 </ul>
-              
-                
+
+
+            </div>
+        </div>
+        <div class="col-md-8 h-100 dd">
+
+            <div class="pt-3">
+                <p class="kk">cancellation</p>
+            </div>
+            <div class="mb-0">
+                <ul
+                    class="d-md-flex mb-0 d-block ddd p-0 text-center text-lg-start justify-content-center justify-content-lg-start container">
+                    <li class="pe-2"><button (click)="OnTabClick('personal details')"
+                            [class.active1]="activeTab=='personal details'" class="btn kk2 px-4">Upcoming</button> </li>
+                    <li class="pe-2 "><button (click)="OnTabClick('personal details2')"
+                            [class.active1]="activeTab=='personal details2'" class="btn kk2 px-4">Cancelled</button>
+                    </li>
+                    <li class="pe-2"><button (click)="OnTabClick('personal detail3')" [class.active1]="activeTab=='personal detail3'" class="btn kk2 px-4">All</button>
+                    </li>
+                    <li class="ms-auto pe-2 pe-md-0"><button class="btn kk2 px-4">Flight</button> </li>
+                </ul>
+            </div>
+            <div class="pe-2 pe-lg-0">
+                <div *ngIf="activeTab=='personal details'" id="FlightCancellationList"
+                    class="cancellation-tab-filter-content mb-5  mt-0 dd">
+                    <div id="FlightCancellationList" class="cancellation-tab-filter-content mt-0 dd">
+                        <div class="item upcoming  kk3">
+                            <ul class="row align-items-center  ml-0 mr-0">
+                                <li class="col-md-1 kk3 text-md-center mb-md-0 mb-2"><svg width="21" height="17"
+                                        viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.012 7.59L4.502 0.518L6.433 0L13.384 6.42L18.646 5.01C19.0303 4.9071 19.4397 4.96107 19.7842 5.16004C20.1287 5.35902 20.3801 5.6867 20.483 6.071C20.5859 6.4553 20.5319 6.86474 20.333 7.20924C20.134 7.55375 19.8063 7.8051 19.422 7.908L4.45 11.918L3.674 9.02L3.915 8.955L6.382 11.4L3.756 12.104C3.54067 12.1617 3.31221 12.1459 3.10693 12.0589C2.90165 11.9719 2.73132 11.8189 2.623 11.624L0 6.898L1.449 6.51L3.915 8.955L9.012 7.589V7.59ZM2.534 14.958H18.534V16.958H2.534V14.958Z"
+                                            fill="#2391D1"></path>
+                                    </svg></li>
+                                <li class="col-md-5 kk3 mb-md-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="">COK</span>
+                                        <div class="d-flex flex-column align-items-center direction-icon ml-2 mr-2">
+                                            <span class="oneway d-flex">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29 6L19 0.226497V11.7735L29 6ZM0 7L20 7V5L0 5L0 7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="return d-flex ">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6L10 11.7735L10 0.226497L0 6ZM9 7L29 7V5L9 5V7Z"
+                                                        fill="#A19595">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="">DXB</span>
+                                    </div>
+                                    <div>Travel Start Date: <span>Thu, 15 Dec 2022</span></div>
+                                </li>
+                                <li class="col-md-4 kk3 d-flex flex-column mb-md-0 mb-2">
+                                    <span>Booking ID: <strong>FB00088951</strong></span>
+                                    <span>Booking Date : <span>Tue, 06 Dec 2022</span></span>
+                                </li>
+                                <li class="col-md-2 kk3">
+                                    <span class="status-not-booked">Not Booked</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div id="FlightCancellationList" class="cancellation-tab-filter-content mt-0 dd">
+                        <div class="item upcoming kk3">
+                            <ul class="row align-items-center ml-0 mr-0">
+                                <li class="col-md-1 kk3 text-md-center mb-md-0 mb-2"><svg width="21" height="17"
+                                        viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.012 7.59L4.502 0.518L6.433 0L13.384 6.42L18.646 5.01C19.0303 4.9071 19.4397 4.96107 19.7842 5.16004C20.1287 5.35902 20.3801 5.6867 20.483 6.071C20.5859 6.4553 20.5319 6.86474 20.333 7.20924C20.134 7.55375 19.8063 7.8051 19.422 7.908L4.45 11.918L3.674 9.02L3.915 8.955L6.382 11.4L3.756 12.104C3.54067 12.1617 3.31221 12.1459 3.10693 12.0589C2.90165 11.9719 2.73132 11.8189 2.623 11.624L0 6.898L1.449 6.51L3.915 8.955L9.012 7.589V7.59ZM2.534 14.958H18.534V16.958H2.534V14.958Z"
+                                            fill="#2391D1"></path>
+                                    </svg></li>
+                                <li class="col-md-5 kk3 mb-md-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="">COK</span>
+                                        <div class="d-flex flex-column align-items-center direction-icon ml-2 mr-2">
+                                            <span class="oneway d-flex">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29 6L19 0.226497V11.7735L29 6ZM0 7L20 7V5L0 5L0 7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="return d-flex ">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6L10 11.7735L10 0.226497L0 6ZM9 7L29 7V5L9 5V7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="">DXB</span>
+                                    </div>
+                                    <div>Travel Start Date: <span>Thu, 15 Dec 2022</span></div>
+                                </li>
+                                <li class="col-md-4 kk3 d-flex flex-column mb-md-0 mb-2">
+                                    <span>Booking ID: <strong>FB00088951</strong></span>
+                                    <span>Booking Date : <span>Tue, 06 Dec 2022</span></span>
+                                </li>
+                                <li class="col-md-2 kk3">
+                                    <span class="status-not-booked">Not Booked</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                    <div id="FlightCancellationList" class="cancellation-tab-filter-content mt-0 dd">
+                        <div class="item upcoming kk3">
+                            <ul class="row align-items-center ml-0 mr-0">
+                                <li class="col-md-1 kk3 text-md-center mb-md-0 mb-2"><svg width="21" height="17"
+                                        viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.012 7.59L4.502 0.518L6.433 0L13.384 6.42L18.646 5.01C19.0303 4.9071 19.4397 4.96107 19.7842 5.16004C20.1287 5.35902 20.3801 5.6867 20.483 6.071C20.5859 6.4553 20.5319 6.86474 20.333 7.20924C20.134 7.55375 19.8063 7.8051 19.422 7.908L4.45 11.918L3.674 9.02L3.915 8.955L6.382 11.4L3.756 12.104C3.54067 12.1617 3.31221 12.1459 3.10693 12.0589C2.90165 11.9719 2.73132 11.8189 2.623 11.624L0 6.898L1.449 6.51L3.915 8.955L9.012 7.589V7.59ZM2.534 14.958H18.534V16.958H2.534V14.958Z"
+                                            fill="#2391D1"></path>
+                                    </svg></li>
+                                <li class="col-md-5 kk3 mb-md-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="">COK</span>
+                                        <div class="d-flex flex-column align-items-center direction-icon ml-2 mr-2">
+                                            <span class="oneway d-flex">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29 6L19 0.226497V11.7735L29 6ZM0 7L20 7V5L0 5L0 7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="return d-flex ">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6L10 11.7735L10 0.226497L0 6ZM9 7L29 7V5L9 5V7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="">DXB</span>
+                                    </div>
+                                    <div>Travel Start Date: <span>Thu, 15 Dec 2022</span></div>
+                                </li>
+                                <li class="col-md-4 kk3 d-flex flex-column mb-md-0 mb-2">
+                                    <span>Booking ID: <strong>FB00088951</strong></span>
+                                    <span>Booking Date : <span>Tue, 06 Dec 2022</span></span>
+                                </li>
+                                <li class="col-md-2 kk3">
+                                    <span class="status-not-booked">Not Booked</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pe-2 pe-lg-0">
+                <div *ngIf="activeTab=='personal details2'" id="FlightCancellationList"
+                    class="cancellation-tab-filter-content mb-5 mt-0 dd">
+                    <div id="FlightCancellationList" class="cancellation-tab-filter-content mt-0 dd">
+                        <div class="item upcoming kk3">
+                            <ul class="row align-items-center ml-0 mr-0">
+                                <li class="col-md-1 kk3 text-md-center mb-md-0 mb-2"><svg width="21" height="17"
+                                        viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.012 7.59L4.502 0.518L6.433 0L13.384 6.42L18.646 5.01C19.0303 4.9071 19.4397 4.96107 19.7842 5.16004C20.1287 5.35902 20.3801 5.6867 20.483 6.071C20.5859 6.4553 20.5319 6.86474 20.333 7.20924C20.134 7.55375 19.8063 7.8051 19.422 7.908L4.45 11.918L3.674 9.02L3.915 8.955L6.382 11.4L3.756 12.104C3.54067 12.1617 3.31221 12.1459 3.10693 12.0589C2.90165 11.9719 2.73132 11.8189 2.623 11.624L0 6.898L1.449 6.51L3.915 8.955L9.012 7.589V7.59ZM2.534 14.958H18.534V16.958H2.534V14.958Z"
+                                            fill="#2391D1"></path>
+                                    </svg></li>
+                                <li class="col-md-5 kk3 mb-md-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="">COK</span>
+                                        <div class="d-flex flex-column align-items-center direction-icon ml-2 mr-2">
+                                            <span class="oneway d-flex">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29 6L19 0.226497V11.7735L29 6ZM0 7L20 7V5L0 5L0 7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="return d-flex ">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6L10 11.7735L10 0.226497L0 6ZM9 7L29 7V5L9 5V7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="">DXB</span>
+                                    </div>
+                                    <div>Travel Start Date: <span>Thu, 15 Dec 2022</span></div>
+                                </li>
+                                <li class="col-md-4 kk3 d-flex flex-column mb-md-0 mb-2">
+                                    <span>Booking ID: <strong>FB00088951</strong></span>
+                                    <span>Booking Date : <span>Tue, 06 Dec 2022</span></span>
+                                </li>
+                                <li class="col-md-2 kk3">
+                                    <span class="status-not-booked">Not Booked</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="pe-2 pe-lg-0">
+                <div *ngIf="activeTab=='personal detail3'" id="FlightCancellationList"
+                    class="cancellation-tab-filter-content mb-5 mt-0 dd">
+                    <div id="FlightCancellationList" class="cancellation-tab-filter-content mt-0 dd">
+                        <div class="item upcoming kk3">
+                            <ul class="row align-items-center ml-0 mr-0">
+                                <li class="col-md-1 kk3 text-md-center mb-md-0 mb-2"><svg width="21" height="17"
+                                        viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.012 7.59L4.502 0.518L6.433 0L13.384 6.42L18.646 5.01C19.0303 4.9071 19.4397 4.96107 19.7842 5.16004C20.1287 5.35902 20.3801 5.6867 20.483 6.071C20.5859 6.4553 20.5319 6.86474 20.333 7.20924C20.134 7.55375 19.8063 7.8051 19.422 7.908L4.45 11.918L3.674 9.02L3.915 8.955L6.382 11.4L3.756 12.104C3.54067 12.1617 3.31221 12.1459 3.10693 12.0589C2.90165 11.9719 2.73132 11.8189 2.623 11.624L0 6.898L1.449 6.51L3.915 8.955L9.012 7.589V7.59ZM2.534 14.958H18.534V16.958H2.534V14.958Z"
+                                            fill="#2391D1"></path>
+                                    </svg></li>
+                                <li class="col-md-5 kk3 mb-md-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="">COK</span>
+                                        <div class="d-flex flex-column align-items-center direction-icon ml-2 mr-2">
+                                            <span class="oneway d-flex">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29 6L19 0.226497V11.7735L29 6ZM0 7L20 7V5L0 5L0 7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="return d-flex ">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6L10 11.7735L10 0.226497L0 6ZM9 7L29 7V5L9 5V7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="">DXB</span>
+                                    </div>
+                                    <div>Travel Start Date: <span>Thu, 15 Dec 2022</span></div>
+                                </li>
+                                <li class="col-md-4 kk3 d-flex flex-column mb-md-0 mb-2">
+                                    <span>Booking ID: <strong>FB00088951</strong></span>
+                                    <span>Booking Date : <span>Tue, 06 Dec 2022</span></span>
+                                </li>
+                                <li class="col-md-2 kk3">
+                                    <span class="status-not-booked">Not Booked</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="FlightCancellationList" class="cancellation-tab-filter-content mt-0 dd">
+                        <div class="item upcoming kk3">
+                            <ul class="row align-items-center ml-0 mr-0">
+                                <li class="col-md-1 kk3 text-md-center mb-md-0 mb-2"><svg width="21" height="17"
+                                        viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.012 7.59L4.502 0.518L6.433 0L13.384 6.42L18.646 5.01C19.0303 4.9071 19.4397 4.96107 19.7842 5.16004C20.1287 5.35902 20.3801 5.6867 20.483 6.071C20.5859 6.4553 20.5319 6.86474 20.333 7.20924C20.134 7.55375 19.8063 7.8051 19.422 7.908L4.45 11.918L3.674 9.02L3.915 8.955L6.382 11.4L3.756 12.104C3.54067 12.1617 3.31221 12.1459 3.10693 12.0589C2.90165 11.9719 2.73132 11.8189 2.623 11.624L0 6.898L1.449 6.51L3.915 8.955L9.012 7.589V7.59ZM2.534 14.958H18.534V16.958H2.534V14.958Z"
+                                            fill="#2391D1"></path>
+                                    </svg></li>
+                                <li class="col-md-5 kk3 mb-md-0 mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <span class="">COK</span>
+                                        <div class="d-flex flex-column align-items-center direction-icon ml-2 mr-2">
+                                            <span class="oneway d-flex">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M29 6L19 0.226497V11.7735L29 6ZM0 7L20 7V5L0 5L0 7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="return d-flex ">
+                                                <svg width="" height="7" viewBox="0 0 29 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6L10 11.7735L10 0.226497L0 6ZM9 7L29 7V5L9 5V7Z"
+                                                        fill="#A19595"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="">DXB</span>
+                                    </div>
+                                    <div>Travel Start Date: <span>Thu, 15 Dec 2022</span></div>
+                                </li>
+                                <li class="col-md-4 kk3 d-flex flex-column mb-md-0 mb-2">
+                                    <span>Booking ID: <strong>FB00088951</strong></span>
+                                    <span>Booking Date : <span>Tue, 06 Dec 2022</span></span>
+                                </li>
+                                <li class="col-md-2 kk3">
+                                    <span class="status-not-booked">Not Booked</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

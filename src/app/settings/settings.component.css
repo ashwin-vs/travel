@@ -1,0 +1,55 @@
+.cc{
+    height: 60px;
+    width: 60px;
+}
+.cc1{
+    background-color: 
+    #4756CB;
+    color: white;
+    /* height: 30px; */
+    /* width: 30px; */
+    font-size: smaller;
+}
+ul li{
+    list-style-type: none;
+    /* padding: 0px; */
+}
+.dd{
+    border: 1px solid #A3A3A3;
+}
+.cc2{
+    color: #4756CB;
+}
+.cc3{
+    font-size: small;
+    color: black;
+}
+.hello1{
+    color: black;
+}
+.active2{
+    color: 
+    #4756CB;
+    font-weight: 700;
+}
+.kk5{
+    font-size: medium;
+    color: #4756CB;
+    font-weight: 600;
+}
+.ssd{
+    padding:0%;
+}
+
+.form-check-input:checked{
+   background-color: black;
+}
+.ppt{
+    font-size: 12px;
+}
+.ppf{
+    height: 10px;
+}
+.vvc{
+    font-size: small;
+}

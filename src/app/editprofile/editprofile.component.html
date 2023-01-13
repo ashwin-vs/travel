@@ -1,0 +1,99 @@
+<div class="container px-lg-5 pt-5">
+    <h5 class="px-lg-5">User Dashboard</h5>
+</div>
+<div class="container px-lg-5 pt-3">
+    <div class="row">
+        <div class="col-md-4 ps-lg-5 ">
+            <div class="dd">
+                <ul class="p-0 text-center">
+                    <li class="pt-3">
+                        <img class="rounded-image cc" src="https://i.postimg.cc/ncXGmSN3/image.png" alt="">
+                    </li>
+                    <li class="cc2 pt-1">
+                        Sreejith
+                    </li>
+                    <li class=" pt-1">
+                        <button class="btn cc1 " for="">My account</button>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/dashboard']">Manage Booking</a></li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/cancellation']">Cancellation</a></li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/profile']">profile</a>
+                    </li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/settings']">settings</a>
+                    </li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2" [routerLink]="['#']">Logout</a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="col-md-8 dd">
+            <div class="row p-3">
+                <div class="col-md-6 ">
+                    <div class="kk5">
+                        <p>Personal information</p>
+                    </div>
+                    <div class="kk4 pt-2">
+                        <label for="">First Name</label>
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">Last Name</label>
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">Phone Number</label>
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">Date Of Birth</label>
+                        <input required value="" class="form-control form-control-sm" type="date">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">Upload Profile Photo</label>
+                        <input required value="" class="form-control form-control-sm" type="file">
+                        <label class="pt-2" for="">Note:Maximum Image Size 1000kb</label>
+                    </div>
+
+                </div>
+                <div class="col-md-6 ">
+                    <div class="kk5">
+                        <p>Contact Details</p>
+                    </div>
+                    <div class="kk4 pt-2">
+                        <label for="">Street Address</label>
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">Country</label>
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">City</label>
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                    <div class="kk4 pt-3">
+                        <label for="">Zip code/Postel code</label>
+                        <input required value="" class="form-control form-control-sm" type="date">
+                    </div>
+                    <div class="col-12 d-flex ps-0 pt-3">
+                        <div class="pe-2"> <button type="button" class="btn btn-sm ss">Update profile</button>
+                        </div>
+                        <div> <button (click)="cancel()" type="button" class="btn btn-sm ss1 ">Cancel</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br>

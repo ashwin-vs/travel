@@ -13,4 +13,9 @@ export class CancellationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  activeTab:string='personal details';
+  OnTabClick(tab:any){
+    this.activeTab=tab;
+  }
+
 }

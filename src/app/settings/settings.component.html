@@ -1,0 +1,141 @@
+<div class="container px-lg-5 pt-5">
+    <h5 class="px-lg-5">User Dashboard</h5>
+</div>
+<div class="container px-lg-5 pt-3">
+    <div class="row">
+        <div class="col-md-4 ps-lg-5 ">
+            <div class="dd">
+                <ul class="p-0 text-center">
+                    <li class="pt-3">
+                        <img class="rounded-image cc" src="https://i.postimg.cc/ncXGmSN3/image.png" alt="">
+                    </li>
+                    <li class="cc2 pt-1">
+                        Sreejith
+                    </li>
+                    <li class=" pt-1">
+                        <button class="btn cc1 " for="">My account</button>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/dashboard']">Manage Booking</a></li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/cancellation']">Cancellation</a></li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/profile']">profile</a>
+                    </li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2"
+                            [routerLink]="['/settings']">settings</a>
+                    </li>
+                    <li class="cc3 pt-4"><a class="hello1" routerLinkActive="active2" [routerLink]="['#']">Logout</a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="col-md-8 dd h-100">
+            <div class="p-3">
+                <div class="kk5">
+                    <p>Change Password</p>
+                </div>
+                <div>
+                    <ul class="d-flex p-0 kk6">
+                        <li class="ssd pe-4">Change with</li>
+                        <li (click)="OnTabClick('Personal Details')" [class.active]="activeTab == 'Personal Details'"
+                            class="ssd pe-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Password
+                                </label>
+                            </div>
+                        </li>
+                        <li (click)="OnTabClick('Personal Details1')" [class.active]="activeTab == 'Personal Details'"
+                            class="ssd ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    OTP
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="activeTab == 'Personal Details'" class="">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div class="pt-2">
+                                <input class="form-control form-control-sm" type="text">
+                            </div>
+                            <div class="pt-2">
+                                <input placeholder="Enter new password" class="form-control form-control-sm"
+                                    type="text">
+                            </div>
+                            <div class="pt-2">
+                                <input placeholder="Confirm new password" class="form-control form-control-sm"
+                                    type="text">
+                            </div>
+                            <div class="pt-2">
+                                <button class="btn-sm btn btn-primary w-50">Save</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="ppi pt-3 ps-0 ps-md-5">
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains between X- XX characters</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains at least X- mixed case letter</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains at least X number</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains at least X special character</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Not contain white space</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="activeTab == 'Personal Details1'" class="">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div class="pt-2">
+                                <input class="form-control form-control-sm" type="text">
+                            </div>
+                            <div class="pt-2">
+                                <input placeholder="Enter new password" class="form-control form-control-sm"
+                                    type="text">
+                            </div>
+                            <div class="pt-2">
+                                <input placeholder="Confirm new password" class="form-control form-control-sm"
+                                    type="text">
+                            </div>
+                            <div class="pt-2">
+                                <p class="vvc p-0">OTP has been sent to your mobile number</p>
+                            </div>
+                            <div class="pt-2">
+                                <button class="btn-sm btn btn-primary w-50">Save</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="ppi pt-3 ps-0 ps-md-5">
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains between X- XX characters</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains at least X- mixed case letter</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains at least X number</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Contains at least X special character</li>
+                                <li class="ppt"><img class="ppf" src="https://i.postimg.cc/yNzSNh8W/image.png" alt="">
+                                    Not contain white space</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br>

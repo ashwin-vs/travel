@@ -1,4 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Berkshire+Swash&family=Blaka+Ink&family=Bungee+Spice&family=Cormorant+SC&family=DM+Serif+Text:ital@1&family=Dancing+Script&family=Edu+QLD+Beginner&family=Henny+Penny&family=Kenia&family=Lobster&family=Merriweather:ital,wght@1,700&family=Oleo+Script&family=Pacifico&family=Permanent+Marker&family=Rampart+One&family=Rubik+Moonrocks&family=Shrikhand&family=The+Nautigal:wght@400;700&family=Ultra&display=swap');
 input:focus, textarea:focus, select:focus{
-    outline: none;}
+    outline: none;
+}
+   
