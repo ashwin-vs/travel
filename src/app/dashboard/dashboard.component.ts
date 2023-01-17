@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   onTabClick(tab:any){
     this.activeTab = tab;
   }
-  constructor(private route:Router) { }
+  constructor(private route:Router , ) { }
 
   ngOnInit(): void {
   }

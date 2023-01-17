@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SiteLayoutModule } from './site-layout/site-layout.module';
@@ -16,6 +19,8 @@ import { CancellationComponent } from './cancellation/cancellation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +43,11 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     AppRoutingModule,
     SiteLayoutModule,
     CarouselModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
