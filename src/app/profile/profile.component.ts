@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { TravelserviceService } from '../travelservice.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,12 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  users: any
 
-  constructor(private route:Router) { }
+  constructor(private route: Router, private http: HttpClient, private userdata: TravelserviceService) {
+    this.userdata.users().subscribe((data) => {
+      this.users = data;
+    })
+  }
+
 
   ngOnInit(): void {
+
   }
-edit(){
-  this.route.navigateByUrl('edit')
-}
+  edit() {
+    this.route.navigateByUrl('edit')
+  }
+  
 }

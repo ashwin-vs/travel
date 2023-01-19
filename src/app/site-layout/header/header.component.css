@@ -61,3 +61,43 @@ a{
   font-size: smaller;
   color:gray;
 }
+.ccy{
+  background-color: inherit; 
+  color: white;
+  border: none;
+  font-size:small;
+  /* padding-top: -2px; */
+}
+.cxzv{
+  color: black;
+  background-color: black;
+}
+.dropdown-toggle{
+  padding: 0px;
+  margin-top: -1px;
+  color: white;
+  font-size: small;
+}
+.ccdf{
+  color: black;
+}
+.ccdf:focus{
+  color: black;
+  background-color: inherit;
+  border: none;
+  outline: none;
+
+}
+.btnssw:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.vvnb{
+  border: none;
+}
+.btnssw{
+  border: none;
+  outline: none;
+}
