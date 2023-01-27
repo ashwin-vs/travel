@@ -1,4 +1,4 @@
-import { HttpClient, HttpEvent,HttpHandler,HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpInterceptor } from '@angular/common/http';
 
-let token:any;
+let token: any;
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthServiceService  implements HttpInterceptor {
-  name:any
+export class AuthServiceService implements HttpInterceptor {
+  name: any
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -22,9 +22,9 @@ export class AuthServiceService  implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-  token =  localStorage.getItem("currentUser")
-  // console.log(`tokrn:${token}`);
-  
+    token = localStorage.getItem("currentUser")
+    // console.log(`tokrn:${token}`);
+
     // let token1 = token;
     let jwttoken = req.clone({
       setHeaders: {
@@ -52,14 +52,14 @@ export class AuthServiceService  implements HttpInterceptor {
       .subscribe((res) => {
         console.log(res);
         localStorage.setItem('currentUser', res.token);
-        localStorage.setItem('loggedUser',res.name)
+        localStorage.setItem('loggedUser', res.name)
 
         token = res.token;
-        if (res) {
+        if (token) {
           alert('login sucessfully');
           this.router.navigateByUrl('');
-       
-        } 
+
+        }
       });
   }
 

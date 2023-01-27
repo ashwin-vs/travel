@@ -25,8 +25,6 @@ const routes: Routes = [
   {path:'settings',component:SettingsComponent},
   {path:'edit',component:EditprofileComponent},
 
-
-
 ];
 
 @NgModule({

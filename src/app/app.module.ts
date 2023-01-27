@@ -45,7 +45,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     CarouselModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   
   providers: [],

@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { FormControl } from '@angular/forms';
+import { TravelserviceService } from '../travelservice.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { query } from '@angular/animations';
+
+
 
 @Component({
   selector: 'app-home',
@@ -8,16 +16,87 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
-
+  myForm!:FormGroup
+  isloading=false
+  productss:any
  
 
 
-  constructor() { }
+  constructor(private flightsearch:TravelserviceService,private http:HttpClient,private route:Router) { }
 
   ngOnInit(): void {
-    
+    this.initForm();
+
+  }
+  initForm() {
+    this.myForm = new FormGroup({
+      OriginLocationCode: new FormControl(null),
+      DestinationLocationCode: new FormControl(null),
+      DepartureWindow: new FormControl(null),
+      DepartureDateTime: new FormControl(null),
+      OriginDestinationInformation: new FormControl(null),
+      ADT: new FormControl(null),
+      CHD: new FormControl(null),
+      AirType: new FormControl('OneWay'),
+    })
+    console.log(this.myForm);
+
   }
 
+  searchflight(){
+    this.route.navigate(['/flightbooking'])
+    {queryParams:{query:
+    this.flightsearch.searchFlights(this.myForm.value).subscribe((data: any) => {
+      console.log(data);
+      this.productss=data.flights
+      // return this.productss
+      
+      
+      console.log(data.flights.forEach((el: any) => {
+        console.log(el)
+
+      }));
+      console.log(`---------------------`);
+      console.log(`---------------------`);
+      console.log(`---------------------`);
+
+      console.log(data.fareList.forEach((el: any) => {
+        console.log(el)
+      }));
+      console.log(`---------------------`);
+      console.log(`---------------------`);
+      console.log(`---------------------`);
+
+      console.log(data.baggageList.forEach((el: any) => {
+        console.log(el)
+      }));
+
+      // let i=0
+      //  data.data.forEach((el:any)=>{
+      //  this.products=el
+      // el.OriginDestinationOptions[0].FlightSegments[0]
+      // this.value[i]=el.OriginDestinationOptions[0].FlightSegments[0]
+      // console.log(el.OriginDestinationOptions[0].FlightSegments[0]);
+
+      // this.empList.push(el.OriginDestinationOptions[0].FlightSegments[0])
+      // i++
+      // });
+
+
+      // console.log(this.empList);
+
+      // this.products = data
+      // console.log(this.products);
+      // return this.products
+
+
+    }), ((err: any) => {
+      console.log(err);
+    })}}
+    // return this.productss
+
+  }
+  
   activeTab:string = 'Account Details';
   onTabClick(tab:any){
     this.activeTab = tab;

@@ -43,169 +43,171 @@
 
 <div class="container px-lg-5 s1 position-relative  pt-5 pt-lg-0 pt-md-5 ">
     <div class="px-lg-5 px-2">
-    <div class="card  c1 shadow ">
+        <div class="card  c1 shadow ">
 
-        <div class="row   pt-2 ">
+            <div class="row   pt-2 ">
 
-            <ul class="d-lg-flex d-block m-0 px-5">
-                <li class="pe-3">
-                    <img src="https://i.postimg.cc/g0v63R97/image.png" alt=""> <label for="">&nbsp; Flights</label>
+                <ul class="d-lg-flex d-block m-0 px-5">
+                    <li class="pe-3">
+                        <img src="https://i.postimg.cc/g0v63R97/image.png" alt=""> <label for="">&nbsp; Flights</label>
 
-                </li>
-                <li class="pt-1 pe-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
-                            checked>
-                        <label (click)="onTabClick('Account Details')" [class.active]="activeTab == 'Account Details'"
-                            class="form-check-label" for="flexRadioDefault1">
-                            Round Trip
-                        </label>
-                    </div>
-                </li>
-                <li class="pe-3 pt-1">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label (click)="onTabClick('personal details')" [class.active]="activeTab == 'personal details'"
-                            class="form-check-label" for="flexRadioDefault2">
-                            One way
-                        </label>
-                    </div>
-                </li>
-                <li class="pe-3 pt-1">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label (click)="onTabClick('other details')" [class.active]="activeTab == 'other details'"
-                            class="form-check-label" for="flexRadioDefault3">
-                            Multi city
-                        </label>
-                    </div>
-                </li>
-                <li class="pe-3 pt-1">
-                    <div class="dropdown">
-                        <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown link
-                        </a>
+                    </li>
+                    <li class="pt-1 pe-3">
+                        <div class="form-check">
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="pt-1">
-                    <div class="dropdown">
-                        <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown link
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
-
-
-
-
-
-
-
-
-
-            <div *ngIf="activeTab == 'Account Details'" class="w-100 px-4">
-                <div class="container text-center col-lg-12">
-                    <!-- <div class="row    g-0">
-                        <div class="col col-12 col-lg  p-3 w-100">
-                            <input type="text" class=" form-control su  " placeholder="Departing from">
+                            <label (click)="onTabClick('Account Details')"
+                                [class.active]="activeTab == 'Account Details'" class="form-check-label"
+                                for="flexRadioDefault1">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1" checked>
+                                Round Trip
+                            </label>
                         </div>
-                        <div class="col col-12 col-lg p-3">
-                            <input type="text" class="form-control su  " placeholder="Going to">
-                        </div>
-                        <div class="col p-3">
-                            <input type="date" class="form-control su ">
-                        </div>
-                        <div class="col col-12 col-lg p-3">
-                            <input type="date" class="form-control su  ">
-                        </div>
+                    </li>
+                    <li class="pe-3 pt-1">
+                        <div class="form-check">
+                            <label (click)="onTabClick('personal details')"
+                                [class.active]="activeTab == 'personal details'" class="form-check-label"
+                                for="flexRadioDefault2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
 
-                        <div class="col col-12 col-lg p-3">
-                            <div class="btn  w-100">Search</div>
+                                One way
+                            </label>
                         </div>
+                    </li>
+                    <li class="pe-3 pt-1">
+                        <div class="form-check">
+                            <label (click)="onTabClick('other details')" [class.active]="activeTab == 'other details'"
+                                class="form-check-label" for="flexRadioDefault3">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault3">
 
-                    </div> -->
-                    <ul class="d-lg-flex  d-block  mk col-lg-12">
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
-                        </li>
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
-                        </li>
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
-                        </li>
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su  ">
-                        </li>
-                        <li class="w-100 pt-2 pt-lg-0">
-                            <div class="btn  w-100">Search</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div *ngIf="activeTab == 'personal details'" class="w-100 px-4">
-                <div class="container text-center">
-                    <ul class="d-lg-flex  d-block  mk col-lg-12">
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
-                        </li>
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
-                        </li>
-                        <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
-                        </li>
-                        
-                        <li class="w-100 pt-2 pt-lg-0">
-                            <div class="btn  w-100">Search</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div *ngIf="activeTab == 'other details'" class="w-100 px-4">
-                <div class="container text-center ">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <ul class="d-lg-flex  d-block  mk col-lg-12">
-                                <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
-                                </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
-                                </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
-                                </li>
-                                
-                               
-                            </ul>
-                            <ul class="d-lg-flex  d-block  mk col-lg-12">
-                                <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  " placeholder="Departing from">
-                                </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  " placeholder="Going to">
-                                </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
-                                </li>
-                                
-                                
+                                Multi city
+                            </label>
+                        </div>
+                    </li>
+                    <li class="pe-3 pt-1">
+                        <div class="dropdown">
+                            <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown link
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </div>
+                    </li>
+                    <li class="pt-1">
+                        <div class="dropdown">
+                            <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown link
+                            </a>
 
-                        <div class="col-lg-3 pt-lg-3">
-                            <div class="btn   w-100">Search</div>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+
+
+
+                <div *ngIf="activeTab == 'Account Details'" class="w-100 px-4">
+                    <form [formGroup]="myForm" (ngSubmit)="searchflight()">
+
+                        <div class="container text-center col-lg-12">
+
+                            <ul class="d-lg-flex  d-block  mk col-lg-12">
+                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="OriginLocationCode" type="text"
+                                        class=" form-control su  " placeholder="Departing from">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="DestinationLocationCode"
+                                        type="text" class="form-control su  " placeholder="Going to">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="DepartureDateTime" type="date"
+                                        class="form-control su ">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="ADT" type="number"
+                                        class="form-control su  ">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0">
+                                    <button type="submit" class="btn  w-100">Search</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div *ngIf="activeTab == 'personal details'" class="w-100 px-4">
+                    <div class="container text-center">
+                        <ul class="d-lg-flex  d-block  mk col-lg-12">
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                    placeholder="Departing from">
+                            </li>
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                    placeholder="Going to">
+                            </li>
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
+                            </li>
+
+                            <li class="w-100 pt-2 pt-lg-0">
+                                <div class="btn  w-100">Search</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div *ngIf="activeTab == 'other details'" class="w-100 px-4">
+                    <div class="container text-center ">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <ul class="d-lg-flex  d-block  mk col-lg-12">
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                            placeholder="Departing from">
+                                    </li>
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                            placeholder="Going to">
+                                    </li>
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
+                                    </li>
+
+
+                                </ul>
+                                <ul class="d-lg-flex  d-block  mk col-lg-12">
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                                            placeholder="Departing from">
+                                    </li>
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                            placeholder="Going to">
+                                    </li>
+                                    <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-3 pt-lg-3">
+                                <div class="btn   w-100">Search</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 
