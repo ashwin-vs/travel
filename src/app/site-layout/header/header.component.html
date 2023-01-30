@@ -51,8 +51,8 @@
                         </a>
                         <!-- <button  class="nav-link ccy p-0" (click)="logout()">logout</button> -->
                         <li *ngIf="login()" class="p-0 vvnb">
-                            <button  class="btn btnssw p-0 dropdown-toggle dropdown-hover" data-bs-hover="dropdown" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <button class="btn btnssw p-0 dropdown-toggle dropdown-hover" data-bs-hover="dropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Dashboard
                             </button>
                             <ul class="dropdown-menu text-dark  ">
@@ -81,33 +81,35 @@
     </div>
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container px-lg-5">
-            <a class="navbar-brand col" href="#"><img class="head-img " src="https://i.postimg.cc/Dzbnx1n9/image.png"
-                    alt=""></a>
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-lg-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" aria-current="page" href="">Home</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" aria-current="page" href="tours">My Bookings</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="flightbooking" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="stepone">Booking Support</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="dashboard">Agent Login</a>
-                    </li>
+            <!-- <div class="row"> -->
+                <a class="navbar-brand col" href="#"><img class="head-img "
+                        src="https://i.postimg.cc/Dzbnx1n9/image.png" alt=""></a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" aria-current="page" href="">Home</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" aria-current="page" href="tours">My Bookings</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="flightbooking" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="stepone">Booking Support</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="dashboard">Agent Login</a>
+                        </li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
+        <!-- </div> -->
     </nav>
 </header>
 
@@ -328,7 +330,7 @@
                                         class="span text-end" href="">forgot password?</a> </p>
 
                                 <div class="mt-2 text-center">
-                                    <button data-bs-dismiss="modal"  aria-label="Close" type="submit"
+                                    <button data-bs-dismiss="modal" aria-label="Close" type="submit"
                                         class="btns  w-100">login</button>
                                 </div>
                                 <div class="mt-3 text-center">

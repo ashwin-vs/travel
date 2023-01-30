@@ -278,5 +278,13 @@ li{
 .w-100{
   margin-left: .25rem;
 }
+select{
+  font-size: small;
+  border: none;
+  color: #121E7E;
+  /* font-weight: bold; */
+  font-weight: 600;
 
+
+}
 

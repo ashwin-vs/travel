@@ -7,7 +7,7 @@ import { TravelserviceService } from '../travelservice.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HomeComponent } from '../home/home.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 const mistiflyApi = 'https://api.mistifly.com/flights/search';
 
 
@@ -44,12 +44,15 @@ export class FlightBookingComponent implements OnInit {
   products: any
   productsfare: any
   prod: any
-  
+  productdata: any
+  productnumber: any
+
+
 
   // empList!: Array<any>
 
 
-  constructor(private http: HttpClient, private flightsearch: TravelserviceService,private activeroute:ActivatedRoute) {
+  constructor(private http: HttpClient, private route: Router, private flightsearch: TravelserviceService, private activeroute: ActivatedRoute) {
 
   }
 
@@ -57,13 +60,17 @@ export class FlightBookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm()
-// let query = this.activeroute.snapshot.paramMap.get('query');
-// query && this.flightsearch.searchFlights(query).subscribe((data)=>{
-//   this.prod=data
-// })
-    this.activeroute.queryParams.subscribe(params=>{
-      this.prod = params['data']
+    // let query = this.activeroute.snapshot.paramMap.get('query');
+    // query && this.flightsearch.searchFlights(query).subscribe((data)=>{
+    //   this.prod=data
+    // })
+    this.activeroute.params.subscribe((data: any) => {
+      this.productdata = data
     })
+    this.flightsearch.searchFlights(this.productdata).subscribe((item: any) => {
+      this.productnumber = item.flights
+    })
+    
   }
 
   initForm() {
@@ -81,6 +88,8 @@ export class FlightBookingComponent implements OnInit {
 
   }
 
+   
+
   searchFlights() {
     this.isloading = true
 
@@ -88,55 +97,26 @@ export class FlightBookingComponent implements OnInit {
 
     this.flightsearch.searchFlights(this.myForm.value).subscribe((data: any) => {
 
-
-      console.log(data);
-      this.products = data.flights, data.FareType;
       this.isloading = false
 
-      console.log(data.flights.forEach((el: any) => {
-        console.log(el)
+      console.log(data);
+      localStorage.setItem('flights', data.flightDetails)
 
-      }));
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-
-      console.log(data.fareList.forEach((el: any) => {
-        console.log(el)
-      }));
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-
-      console.log(data.baggageList.forEach((el: any) => {
-        console.log(el)
-      }));
-
-      // let i=0
-      //  data.data.forEach((el:any)=>{
-      //  this.products=el
-      // el.OriginDestinationOptions[0].FlightSegments[0]
-      // this.value[i]=el.OriginDestinationOptions[0].FlightSegments[0]
-      // console.log(el.OriginDestinationOptions[0].FlightSegments[0]);
-
-      // this.empList.push(el.OriginDestinationOptions[0].FlightSegments[0])
-      // i++
-      // });
+      this.products = data.flights
 
 
-      // console.log(this.empList);
-
-      // this.products = data
-      // console.log(this.products);
-      // return this.products
-
-
-    }), ((err: any) => {
+    }, ((err: any) => {
       console.log(err);
+      alert("server issue please try again later")
+      this.isloading = false
+
+
+      //  this.route.navigateByUrl('')
 
     })
-    // this.search = this.flightsearch.searchResults
-    // this.http.post(this.myForm.value)
+      // this.search = this.flightsearch.searchResults
+      // this.http.post(this.myForm.value)
+    )
   }
   searchflighttwo() {
     this.prod = this.flightsearch.search

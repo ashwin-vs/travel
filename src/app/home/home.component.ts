@@ -17,8 +17,9 @@ import { query } from '@angular/animations';
 export class HomeComponent implements OnInit {
 
   myForm!:FormGroup
-  isloading=false
+  // isloading=false
   productss:any
+  loading = false;
  
 
 
@@ -44,10 +45,12 @@ export class HomeComponent implements OnInit {
   }
 
   searchflight(){
-    this.route.navigate(['/flightbooking'])
-    {queryParams:{query:
+    this.loading = true
+    // {queryParams:{query:
     this.flightsearch.searchFlights(this.myForm.value).subscribe((data: any) => {
       console.log(data);
+      this.route.navigate(['/flightbooking'])
+
       this.productss=data.flights
       // return this.productss
       
@@ -90,12 +93,14 @@ export class HomeComponent implements OnInit {
       // return this.products
 
 
-    }), ((err: any) => {
+    }, ((err: any) => {
+      alert('network issue please try again later')
+      this.loading=false;
       console.log(err);
-    })}}
+    })
     // return this.productss
 
-  }
+    )}
   
   activeTab:string = 'Account Details';
   onTabClick(tab:any){

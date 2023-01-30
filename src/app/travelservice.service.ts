@@ -40,6 +40,10 @@ export class TravelserviceService {
   const baseurl='https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights';
   return this.http.post<any>(baseurl,dat);
   }
+  viewproduct(MarketingFlightNumber: any) {
+    const baseurl = 'https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights'+MarketingFlightNumber
+    return this.http.post<any>(baseurl,MarketingFlightNumber);
+  }
 
   // searchtwo(){
   //   this.search = this.flight.productss

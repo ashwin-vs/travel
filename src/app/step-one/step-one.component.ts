@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TravelserviceService } from '../travelservice.service';
 
 
 @Component({
@@ -8,12 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./step-one.component.css']
 })
 export class StepOneComponent implements OnInit {
+  productdata: any
+  productnumber:any
 
-  constructor(private router:Router) { }
+  constructor(private router: Router, private activatedroute: ActivatedRoute,private travelservice:TravelserviceService) { }
 
   ngOnInit(): void {
+    this.activatedroute.params.subscribe((data: any) => {
+      this.productdata = data['MarketingFlightNumber']
+    })
+    this.travelservice.viewproduct(this.productdata).subscribe((item:any)=>{
+      this.productnumber=item
+    })
   }
-  steptwo(){
+  steptwo() {
     this.router.navigateByUrl('steptwo')
   }
 

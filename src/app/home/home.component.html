@@ -91,29 +91,37 @@
                         <div class="dropdown">
                             <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Dropdown link
+                                Traveller
                             </a>
 
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <div class="dropdown-menu">
+                                <label for="">adult</label> <input min="1" max="8" step="2" value="1"
+                                    class="form-control" type="number">
+                                <label for="">child</label> <input min="0" max="2" class="form-control" type="number">
+                                <label for="">senior citizen</label> <input min="0" max="2" class="form-control"
+                                    type="number">
+                            </div>
                         </div>
                     </li>
-                    <li class="pt-1">
-                        <div class="dropdown">
+                    <li class=" pt-1 ps-0">
+                        <!-- <div class="dropdown">
                             <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Dropdown link
+                                Economy
                             </a>
 
-                            <ul class="dropdown-menu">
+                            <div class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
+                            </div>
+                        </div> -->
+                        <select  >
+                            <option class="p-0" selected>Economy</option>
+                            <option class="p-0" value="1">Business</option>
+                            <option class="p-0" value="2">Students</option>
+                            <!-- <option class="p-0" value="3">Three</option> -->
+                        </select>
                     </li>
                 </ul>
 
@@ -145,7 +153,13 @@
                                         class="form-control su  ">
                                 </li>
                                 <li class="w-100 pt-2 pt-lg-0">
-                                    <button type="submit" class="btn  w-100">Search</button>
+                                    <!-- <button type="submit" class="btn  w-100">Search</button> -->
+                                    <button [disabled]="loading" class="btn btna  w-100" type="submit">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
+                                        <span *ngIf="loading" class>Loading...</span>
+                                        <span *ngIf="!loading">search</span>
+                                    </button>
                                 </li>
                             </ul>
                         </div>

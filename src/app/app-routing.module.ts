@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'',redirectTo:'', pathMatch:'full', component:HomeComponent},
   {path:'tours', component:TourPackagesComponent},
   {path:'flightbooking',component:FlightBookingComponent},
-  {path:'stepone',component:StepOneComponent},
+  {path:'stepone/:MarketingFlightNumber',component:StepOneComponent},
   {path:'steptwo',component:BookingtwoComponent},
   {path:'stepthree',component:StepThreeComponent},
   {path:'dashboard',component:DashboardComponent},
