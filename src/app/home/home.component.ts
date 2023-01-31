@@ -16,19 +16,26 @@ import { query } from '@angular/animations';
 })
 export class HomeComponent implements OnInit {
 
-  myForm!:FormGroup
+  myForm!: FormGroup
   // isloading=false
-  productss:any
+  productss: any
   loading = false;
- 
+  displayval = '';
+  quantity: number = 1;
+  quantity1: number = 0;
 
 
-  constructor(private flightsearch:TravelserviceService,private http:HttpClient,private route:Router) { }
+
+
+
+  constructor(private flightsearch: TravelserviceService, private http: HttpClient, private route: Router) { }
 
   ngOnInit(): void {
     this.initForm();
 
   }
+
+
   initForm() {
     this.myForm = new FormGroup({
       OriginLocationCode: new FormControl(null),
@@ -43,17 +50,17 @@ export class HomeComponent implements OnInit {
     console.log(this.myForm);
 
   }
-  searchflight(){
+  searchflight() {
     this.loading = true
     // {queryParams:{query:
     this.flightsearch.searchFlights(this.myForm.value).subscribe((data: any) => {
       console.log(data);
       this.route.navigate(['/flightbooking'])
 
-      this.productss=data.flights
+      this.productss = data.flights
       // return this.productss
-      
-      
+
+
       console.log(data.flights.forEach((el: any) => {
         console.log(el)
 
@@ -94,20 +101,55 @@ export class HomeComponent implements OnInit {
 
     }, ((err: any) => {
       alert('network issue please try again later')
-      this.loading=false;
+      this.loading = false;
       console.log(err);
     })
-    // return this.productss
+      // return this.productss
 
-    )}
-  
-  activeTab:string = 'Account Details';
-  onTabClick(tab:any){
+    )
+  }
+
+
+  getvalue(value: any) {
+    console.log(value);
+    this.displayval = value
+
+  }
+  i = 1;
+  j = 0;
+  plus() {
+    if (this.i != 8) {
+      this.i++;
+      this.quantity = this.i
+    }
+  }
+  minus(){
+    if(this.i>1){
+      this.i--;
+      this.quantity=this.i
+    }
+  }
+
+
+  plusj() {
+    if (this.j != 8) {
+      this.j++;
+      this.quantity1 = this.j
+    }
+  }
+  minus1(){
+    if(this.j>0){
+      this.j--;
+      this.quantity1=this.j
+    }
+  }
+  activeTab: string = 'return';
+  onTabClick(tab: any) {
     this.activeTab = tab;
   }
-  activeTab1:string ='Personal Details1'
-  onTabClick1(tab1:any){
-    this.activeTab1=tab1;
+  activeTab1: string = 'Personal Details1'
+  onTabClick1(tab1: any) {
+    this.activeTab1 = tab1;
   }
 
 
@@ -117,10 +159,10 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    autoplay:true,
+    autoplay: true,
     navSpeed: 1000,
-    smartSpeed:1000,
-    autoplaySpeed:1000,
+    smartSpeed: 1000,
+    autoplaySpeed: 1000,
     navText: ['', ''],
     responsive: {
       0: {
@@ -145,10 +187,10 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    autoplay:true,
+    autoplay: true,
     navSpeed: 1000,
-    smartSpeed:1000,
-    autoplaySpeed:1000,
+    smartSpeed: 1000,
+    autoplaySpeed: 1000,
     navText: ['', ''],
     responsive: {
       0: {
