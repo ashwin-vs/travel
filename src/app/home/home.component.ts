@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit {
     console.log(this.myForm);
 
   }
-
   searchflight(){
     this.loading = true
     // {queryParams:{query:

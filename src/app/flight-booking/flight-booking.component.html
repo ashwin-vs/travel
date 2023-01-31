@@ -40,8 +40,8 @@
 
                     <li class="pe-3 pl-3 pl-lg-0 pt-1">
                         <div class="form-check">
-                            <label (click)="onTabClick('personal details')"
-                                [class.active]="activeTab == 'personal details'" class="form-check-label"
+                            <label (click)="onTabClick('oneway')"
+                                [class.active]="activeTab == 'oneway'" class="form-check-label"
                                 for="flexRadioDefault2">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
                                     id="flexRadioDefault2">
@@ -100,25 +100,28 @@
 
 
 
-                <div *ngIf="activeTab == 'Account Details'" class=" px-4">
+                <div *ngIf="activeTab == 'oneway'" class=" px-4">
                     <form [formGroup]="myForm" (ngSubmit)="searchFlights()">
                         <div class="container text-center col-lg-12">
                             <ul class="d-lg-flex  d-block  mk col-lg-12">
                                 <li class="w-100 pt-2 pt-lg-0"> <input id="OriginLocationCode"
-                                        formControlName="OriginLocationCode" name="OriginLocationCode" type="text"
+                                        formControlName="OriginLocationCode" name="OriginLocationCode," type="text"
                                         class=" form-control su  " placeholder="Departing from">
                                 </li>
+                                
                                 <li class="w-100 pt-2 pt-lg-0"> <input id="DestinationLocationCode"
                                         formControlName="DestinationLocationCode" name="DestinationLocationCode"
                                         type="text" class="form-control su  " placeholder="Going to">
                                 </li>
+                               
+                               
                                 <li class="w-100 pt-2 pt-lg-0"> <input id="departure_date"
                                         formControlName="DepartureDateTime" name="DepartureWindow" type="date"
                                         class="form-control su ">
                                 </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input id="return_date" formControlName="ADT"
-                                        name="DepartureDateTime" type="number" class="form-control su  ">
-                                </li>
+                                <!-- <li class="w-100 pt-2 pt-lg-0"> <input id="return_date" formControlName="ADT"
+                                        name="DepartureDateTime1" type="number" class="form-control su  ">
+                                </li> -->
                                 <li class="w-100 pt-2 pt-lg-0">
                                     <!-- <button  [disabled]="isloading" type="submit" class="btn btna  w-100">Search</button> -->
                                     <button [disabled]="isloading" class="btn btna  w-100" type="submit">
@@ -135,7 +138,7 @@
 
 
 
-                <div *ngIf="activeTab == 'personal details'" class=" px-4">
+                <div *ngIf="activeTab == 'Account Details'" class=" px-4">
 
                     <div class="container text-center">
                         <ul class="d-lg-flex  d-block  mk col-lg-12">
@@ -144,6 +147,8 @@
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
                                     placeholder="Going to">
+                            </li>
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                             </li>
@@ -262,7 +267,7 @@
                     </td>
                     <td class="">
                         <div style="font-size: 17px; font-weight: 700;">
-                            {{product.flightFare.PassengerFare[0].TotalFare}}</div>
+                            {{product.flightFare.PassengerFare[0].TotalFare}} <i style="font-size:17px;" class="fa-solid fa-dollar-sign"></i></div>
                         <div><a href='stepone/{{product.MarketingFlightNumber}}' class="btn btnb btn-primary">BOOK</a>
                         </div>
                     </td>

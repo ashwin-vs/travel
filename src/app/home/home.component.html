@@ -66,9 +66,8 @@
                     </li>
                     <li class="pe-3 pt-1">
                         <div class="form-check">
-                            <label (click)="onTabClick('personal details')"
-                                [class.active]="activeTab == 'personal details'" class="form-check-label"
-                                for="flexRadioDefault2">
+                            <label (click)="onTabClick('oneway')" [class.active]="activeTab == 'oneway'"
+                                class="form-check-label" for="flexRadioDefault2">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
                                     id="flexRadioDefault2">
 
@@ -87,21 +86,25 @@
                             </label>
                         </div>
                     </li>
-                    <li class="pe-3 pt-1">
-                        <div class="dropdown">
-                            <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Traveller
-                            </a>
 
-                            <div class="dropdown-menu">
-                                <label for="">adult</label> <input min="1" max="8" step="2" value="1"
-                                    class="form-control" type="number">
-                                <label for="">child</label> <input min="0" max="2" class="form-control" type="number">
-                                <label for="">senior citizen</label> <input min="0" max="2" class="form-control"
-                                    type="number">
+                    <li *ngIf="activeTab == 'oneway'" class="pe-3 pt-1">
+                        <form [formGroup]="myForm" (ngSubmit)="searchflight()">
+                            <div class="dropdown">
+                                <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Traveller
+                                </a>
+
+                                <div class="dropdown-menu">
+                                    <label for="">adult</label> <input formControlName="ADT" min="1" max="8" value="1"
+                                        class="form-control" type="number">
+                                    <label for="">child</label> <input formControlName="CHD" min="0" max="2"
+                                        class="form-control" type="number">
+                                    <label for="">senior citizen</label> <input min="0" max="2" class="form-control"
+                                        type="number">
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </li>
                     <li class=" pt-1 ps-0">
                         <!-- <div class="dropdown">
@@ -116,7 +119,7 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </div>
                         </div> -->
-                        <select  >
+                        <select>
                             <option class="p-0" selected>Economy</option>
                             <option class="p-0" value="1">Business</option>
                             <option class="p-0" value="2">Students</option>
@@ -134,7 +137,7 @@
 
 
 
-                <div *ngIf="activeTab == 'Account Details'" class="w-100 px-4">
+                <div *ngIf="activeTab == 'oneway'" class="w-100 px-4">
                     <form [formGroup]="myForm" (ngSubmit)="searchflight()">
 
                         <div class="container text-center col-lg-12">
@@ -149,9 +152,9 @@
                                 <li class="w-100 pt-2 pt-lg-0"> <input formControlName="DepartureDateTime" type="date"
                                         class="form-control su ">
                                 </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="ADT" type="number"
+                                <!-- <li class="w-100 pt-2 pt-lg-0"> <input formControlName="ADT" type="number"
                                         class="form-control su  ">
-                                </li>
+                                </li> -->
                                 <li class="w-100 pt-2 pt-lg-0">
                                     <!-- <button type="submit" class="btn  w-100">Search</button> -->
                                     <button [disabled]="loading" class="btn btna  w-100" type="submit">
@@ -165,7 +168,7 @@
                         </div>
                     </form>
                 </div>
-                <div *ngIf="activeTab == 'personal details'" class="w-100 px-4">
+                <div *ngIf="activeTab == 'Account Details'" class="w-100 px-4">
                     <div class="container text-center">
                         <ul class="d-lg-flex  d-block  mk col-lg-12">
                             <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
@@ -173,6 +176,8 @@
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
                                     placeholder="Going to">
+                            </li>
+                            <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                             </li>
                             <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
                             </li>
