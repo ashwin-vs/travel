@@ -17,12 +17,15 @@ import { query } from '@angular/animations';
 export class HomeComponent implements OnInit {
 
   myForm!: FormGroup
+  returnform!: FormGroup
   // isloading=false
   productss: any
   loading = false;
   displayval = '';
+  displayval2 = '';
   quantity: number = 1;
   quantity1: number = 0;
+  returnproducts: any
 
 
 
@@ -49,7 +52,23 @@ export class HomeComponent implements OnInit {
     })
     console.log(this.myForm);
 
+
+    this.returnform = new FormGroup({
+      OriginLocationCode: new FormControl(null),
+      OriginLocationCode1: new FormControl(null),
+      DestinationLocationCode: new FormControl(null),
+      DestinationLocationCode1: new FormControl(null),
+      DepartureWindow: new FormControl(null),
+      DepartureDateTime: new FormControl(null),
+      DepartureDateTime1: new FormControl(null),
+      OriginDestinationInformation: new FormControl(null),
+      ADT: new FormControl(null),
+      CHD: new FormControl(null),
+      AirType: new FormControl('return'),
+    })
   }
+
+
   searchflight() {
     this.loading = true
     // {queryParams:{query:
@@ -60,25 +79,13 @@ export class HomeComponent implements OnInit {
       this.productss = data.flights
       // return this.productss
 
+      // console.log(`---------------------`);
+      // console.log(`---------------------`);
+      // console.log(`---------------------`);
 
-      console.log(data.flights.forEach((el: any) => {
-        console.log(el)
-
-      }));
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-
-      console.log(data.fareList.forEach((el: any) => {
-        console.log(el)
-      }));
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-      console.log(`---------------------`);
-
-      console.log(data.baggageList.forEach((el: any) => {
-        console.log(el)
-      }));
+      // console.log(data.baggageList.forEach((el: any) => {
+      //   console.log(el)
+      // }));
 
       // let i=0
       //  data.data.forEach((el:any)=>{
@@ -109,12 +116,33 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  searchroundtrip() {
+    this.loading = true
+    this.flightsearch.searchFlights(this.returnform.value).subscribe((data: any) => {
+      console.log(data);
+      this.route.navigate(['/flightbooking'])
+
+      this.returnproducts = data.flights
+    },((err: any) => {
+      alert('network issue please try again later')
+      this.loading = false;
+      console.log(err);})
+      )
+  }
+
 
   getvalue(value: any) {
     console.log(value);
     this.displayval = value
 
   }
+  getvalue2(value2: any) {
+    console.log(value2);
+    this.displayval2 = value2
+
+  }
+
+
   i = 1;
   j = 0;
   plus() {
@@ -123,10 +151,10 @@ export class HomeComponent implements OnInit {
       this.quantity = this.i
     }
   }
-  minus(){
-    if(this.i>1){
+  minus() {
+    if (this.i > 1) {
       this.i--;
-      this.quantity=this.i
+      this.quantity = this.i
     }
   }
 
@@ -137,12 +165,15 @@ export class HomeComponent implements OnInit {
       this.quantity1 = this.j
     }
   }
-  minus1(){
-    if(this.j>0){
+  minus1() {
+    if (this.j > 0) {
       this.j--;
-      this.quantity1=this.j
+      this.quantity1 = this.j
     }
   }
+
+
+
   activeTab: string = 'return';
   onTabClick(tab: any) {
     this.activeTab = tab;

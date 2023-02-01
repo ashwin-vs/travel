@@ -40,9 +40,8 @@
 
                     <li class="pe-3 pl-3 pl-lg-0 pt-1">
                         <div class="form-check">
-                            <label (click)="onTabClick('oneway')"
-                                [class.active]="activeTab == 'oneway'" class="form-check-label"
-                                for="flexRadioDefault2">
+                            <label (click)="onTabClick('oneway')" [class.active]="activeTab == 'oneway'"
+                                class="form-check-label" for="flexRadioDefault2">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
                                     id="flexRadioDefault2">
 
@@ -63,31 +62,49 @@
                     </li>
                     <li class="pe-3 pl-3 pl-lg-0 pt-1">
                         <div class="dropdown">
-                            <a class=" dropdown-toggle c1" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Economy
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="pt-1 pl-3 pl-lg-0">
-                        <div class="dropdown">
-                            <a class=" dropdown-toggle c1" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class=" dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">
                                 Traveller
                             </a>
 
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <div class="dropdown-menu p-3">
+                                <p class="text-center p-0" for="">Adult</p>
+                                <div class="d-flex ">
+                                    <button class="btn btn-primary btn-sm " type="button" (click)="minus()"><i
+                                            class="fa fa-minus"></i></button>
+                                    <input disabled class="text-center zx3" type="text" #box [value]="quantity" min="1"
+                                        max="8">
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="plus()"><i
+                                            class="fa fa-plus"></i></button>
+                                </div>
+                                <p class="text-center p-0" for="">Child</p>
+                                <div class="d-flex w-50 ">
+                                    <button class="btn btn-primary btn-sm " type="button" (click)="minus1()"><i
+                                            class="fa fa-minus"></i></button>
+                                    <input disabled class="text-center zx3" type="text" #box [value]="quantity1" min="1"
+                                        max="8">
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="plusj()"><i
+                                            class="fa fa-plus"></i></button>
+                                </div>
+                                <!-- <label for="">adult</label> <input #box (keyup)="getvalue(box.value)"  min="1" max="8" value="1"
+                                        class="form-control" type="number">  -->
+
+
+                                <!-- (keydown)="getvalue(box.value)" -->
+
+
+
+
+                            </div>
                         </div>
+                    </li>
+                    <li class="pt-1 pl-3 pl-lg-0 soso">
+                        <select>
+                            <option class="p-0" selected>Economy</option>
+                            <option class="p-0" value="1">Business</option>
+                            <option class="p-0" value="2">Students</option>
+                            <!-- <option class="p-0" value="3">Three</option> -->
+                        </select>
                     </li>
                 </ul>
 
@@ -108,16 +125,19 @@
                                         formControlName="OriginLocationCode" name="OriginLocationCode," type="text"
                                         class=" form-control su  " placeholder="Departing from">
                                 </li>
-                                
+
                                 <li class="w-100 pt-2 pt-lg-0"> <input id="DestinationLocationCode"
                                         formControlName="DestinationLocationCode" name="DestinationLocationCode"
                                         type="text" class="form-control su  " placeholder="Going to">
                                 </li>
-                               
-                               
+
+
                                 <li class="w-100 pt-2 pt-lg-0"> <input id="departure_date"
                                         formControlName="DepartureDateTime" name="DepartureWindow" type="date"
                                         class="form-control su ">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0 d-none "> <input [(ngModel)]="quantity"
+                                        formControlName="ADT" type="text" class="form-control su ">
                                 </li>
                                 <!-- <li class="w-100 pt-2 pt-lg-0"> <input id="return_date" formControlName="ADT"
                                         name="DepartureDateTime1" type="number" class="form-control su  ">
@@ -139,25 +159,47 @@
 
 
                 <div *ngIf="activeTab == 'Account Details'" class=" px-4">
+                    <form [formGroup]="returnform" (ngSubmit)="searchroundtrip()">
 
-                    <div class="container text-center">
-                        <ul class="d-lg-flex  d-block  mk col-lg-12">
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class=" form-control su  "
+                        <div class="container text-center">
+                            <ul class="d-lg-flex  d-block  mk col-lg-12">
+                                <li class="w-100 pt-2 pt-lg-0"> <input #box (keyup)="getvalue(box.value)" type="text"
+                                    formControlName="OriginLocationCode" class=" form-control su  "
                                     placeholder="Departing from">
-                            </li>
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="text" class="form-control su  "
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0"> <input #box2 (keyup)="getvalue2(box2.value)" type="text"
+                                    formControlName="DestinationLocationCode" class="form-control su  "
+                                    placeholder="Going to">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0 d-none"> <input id="box" [(ngModel)]="displayval"
+                                    type="text" formControlName="DestinationLocationCode1" class="form-control su  "
                                     placeholder="Going to">
                             </li>
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
-                            </li>
-                            <li class="w-100 pt-2 pt-lg-0"> <input type="date" class="form-control su ">
-                            </li>
+                            <li class="w-100 pt-2 pt-lg-0 d-none"> <input id="box2" [(ngModel)]="displayval2"
+                                type="text" formControlName="OriginLocationCode1" class=" form-control su  "
+                                placeholder="Departing from">
+                        </li>
+                                <li class="w-100 pt-2 pt-lg-0"> <input type="date" formControlName="DepartureDateTime"
+                                    class="form-control su ">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0"> <input type="date" formControlName="DepartureDateTime1"
+                                    class="form-control su ">
+                                </li>
+                                <li class="w-100 pt-2 pt-lg-0 d-none "> <input [(ngModel)]="quantity"
+                                        formControlName="ADT" type="text" class="form-control su ">
+                                </li>
 
-                            <li class="w-100 pt-2 pt-lg-0">
-                                <div class="btna btn  w-100">Search</div>
-                            </li>
-                        </ul>
-                    </div>
+                                <li class="w-100 pt-2 pt-lg-0">
+                                    <button [disabled]="isloading" class="btn btna  w-100" type="submit">
+                                        <span *ngIf="isloading" class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>
+                                        <span *ngIf="isloading" class>Loading...</span>
+                                        <span *ngIf="!isloading">search</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
                 </div>
 
 
@@ -245,30 +287,33 @@
 
                 </tr>
             </thead>
+            <!-- flightDetailsReturn -->
             <tbody class="tbd ">
                 <tr class="">
                     <th class="" scope="row"><img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt=""></th>
                     <td>
                         <div>{{product.flightDetails.DepartureDateTime}}</div>
-                        <div class="pt-4">{{product.flightDetails.DepartureDateTime}}</div>
+                        <div class="pt-4">{{product.flightDetailsReturn
+                            .DepartureDateTime}}</div>
                     </td>
                     <td>
                         <div>{{product.flightDetails.stops}}</div>
-                        <div class="pt-4">{{product.flightDetails.stops}}</div>
+                        <div class="pt-4">{{product.flightDetailsReturn.stops}}</div>
                     </td>
                     <td>
-                        <div>{{product.DepartureAirportLocationCode}}</div>
-                        <div class="pt-4">{{product.flightDetails.DepartureAirportLocationCode}}</div>
+                        <div>{{product.flightDetails.DepartureAirportLocationCode}}</div>
+                        <div class="pt-4">{{product.flightDetailsReturn.DepartureAirportLocationCode}}</div>
                     </td>
                     <td>
-                        <div> {{product.flightDetails.JourneyDuration}}<span>hr</span>
+                        <div> {{product.flightDetails.JourneyDuration}}<span> min</span>
                         </div>
-                        <div class="pt-4"> {{product.flightDetails.JourneyDuration}}<span>hr</span></div>
+                        <div class="pt-4"> {{product.flightDetailsReturn.JourneyDuration}}<span> min</span></div>
                     </td>
                     <td class="">
                         <div style="font-size: 17px; font-weight: 700;">
-                            {{product.flightFare.PassengerFare[0].TotalFare}} <i style="font-size:17px;" class="fa-solid fa-dollar-sign"></i></div>
-                        <div><a href='stepone/{{product.MarketingFlightNumber}}' class="btn btnb btn-primary">BOOK</a>
+                            {{product.flightFare.PassengerFare[0].TotalFare}} <i style="font-size:17px;"
+                                class="fa-solid fa-dollar-sign"></i></div>
+                        <div><a href='stepone/{{product.FareSourceCode}}' class="btn btnb btn-primary">BOOK</a>
                         </div>
                     </td>
 
@@ -521,12 +566,3 @@
 </div>
 
 <br><br>
-
-
-
-
-
-
-
-
-

@@ -113,6 +113,19 @@
 .bdr {
   border: 1px solid #D2D3DD;
 }
+.zx3{
+  border: none;
+}
+select{
+  font-size: small;
+  border: none;
+  color:white;
+  background-color:#070F4E;
+  /* font-weight: bold; */
+  font-weight: 600;
+
+
+}
 
 
 

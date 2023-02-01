@@ -15,6 +15,7 @@ let token: any;
 
 export class AuthServiceService implements HttpInterceptor {
   name: any
+  alert1= false
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -56,6 +57,7 @@ export class AuthServiceService implements HttpInterceptor {
 
         token = res.token;
         if (token) {
+          // return token
           alert('login sucessfully');
           this.router.navigateByUrl('');
 

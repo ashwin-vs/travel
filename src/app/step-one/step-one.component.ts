@@ -16,10 +16,10 @@ export class StepOneComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedroute.params.subscribe((data: any) => {
-      this.productdata = data['MarketingFlightNumber']
+      this.productdata = data['FareSourceCode']
     })
     this.travelservice.viewproduct(this.productdata).subscribe((item:any)=>{
-      this.productnumber=item
+      this.productnumber=item.flights
     })
   }
   steptwo() {

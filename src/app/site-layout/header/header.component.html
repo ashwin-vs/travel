@@ -82,33 +82,33 @@
     <nav class="navbar navbar-expand-lg bg-white">
         <div class="container px-lg-5">
             <!-- <div class="row"> -->
-                <a class="navbar-brand col" href="#"><img class="head-img "
-                        src="https://i.postimg.cc/Dzbnx1n9/image.png" alt=""></a>
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-lg-auto">
-                        <li class="nav-item ">
-                            <a class="nav-link" aria-current="page" href="">Home</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" aria-current="page" href="tours">My Bookings</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="flightbooking" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="stepone">Booking Support</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="dashboard">Agent Login</a>
-                        </li>
+            <a class="navbar-brand col" href="#"><img class="head-img " src="https://i.postimg.cc/Dzbnx1n9/image.png"
+                    alt=""></a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" aria-current="page" href="">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" aria-current="page" href="tours">My Bookings</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="flightbooking" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="stepone">Booking Support</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="dashboard">Agent Login</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
+        </div>
         <!-- </div> -->
     </nav>
 </header>
@@ -378,3 +378,12 @@
         </div>
     </div>
 </div>
+
+
+
+
+<div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Enter the fields correctly</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+

@@ -30,6 +30,7 @@ export class FlightBookingComponent implements OnInit {
 
   datas: any
   myForm!: FormGroup
+  returnform!: FormGroup
   // value1! []:[]
   //  value1 !:[]
   // httpOptions = {
@@ -46,6 +47,10 @@ export class FlightBookingComponent implements OnInit {
   prod: any
   productdata: any
   productnumber: any
+  quantity: number = 1;
+  quantity1: number = 0;
+  displayval = '';
+  displayval2 = '';
 
 
 
@@ -70,7 +75,7 @@ export class FlightBookingComponent implements OnInit {
     this.flightsearch.searchFlights(this.productdata).subscribe((item: any) => {
       this.productnumber = item.flights
     })
-    
+
   }
 
   initForm() {
@@ -86,9 +91,23 @@ export class FlightBookingComponent implements OnInit {
     })
     console.log(this.myForm);
 
+    this.returnform = new FormGroup({
+      OriginLocationCode: new FormControl(null),
+      OriginLocationCode1: new FormControl(null),
+      DestinationLocationCode: new FormControl(null),
+      DestinationLocationCode1: new FormControl(null),
+      DepartureWindow: new FormControl(null),
+      DepartureDateTime: new FormControl(null),
+      DepartureDateTime1: new FormControl(null),
+      OriginDestinationInformation: new FormControl(null),
+      ADT: new FormControl(null),
+      CHD: new FormControl(null),
+      AirType: new FormControl('return'),
+    })
+
   }
 
-   
+
 
   searchFlights() {
     this.isloading = true
@@ -118,8 +137,70 @@ export class FlightBookingComponent implements OnInit {
       // this.http.post(this.myForm.value)
     )
   }
-  searchflighttwo() {
-    this.prod = this.flightsearch.search
+  searchroundtrip() {
+    this.isloading = true
+    this.flightsearch.searchFlights(this.returnform.value).subscribe((data: any) => {
+
+      this.isloading = false
+
+      console.log(data);
+      localStorage.setItem('flights', data.flightDetails)
+
+      this.products = data.flights
+
+
+    }, ((err: any) => {
+      console.log(err);
+      alert("server issue please try again later")
+      this.isloading = false
+
+    })
+
+    )
+  }
+
+  getvalue(value: any) {
+    console.log(value);
+    this.displayval = value
+
+  }
+  getvalue2(value2: any) {
+    console.log(value2);
+    this.displayval2 = value2
+
+  }
+
+
+
+
+
+  i = 1;
+  j = 0;
+  plus() {
+    if (this.i != 8) {
+      this.i++;
+      this.quantity = this.i
+    }
+  }
+  minus() {
+    if (this.i > 1) {
+      this.i--;
+      this.quantity = this.i
+    }
+  }
+
+
+  plusj() {
+    if (this.j != 8) {
+      this.j++;
+      this.quantity1 = this.j
+    }
+  }
+  minus1() {
+    if (this.j > 0) {
+      this.j--;
+      this.quantity1 = this.j
+    }
   }
 
 

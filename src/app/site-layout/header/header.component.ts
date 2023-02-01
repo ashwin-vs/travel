@@ -30,6 +30,9 @@ export class HeaderComponent implements OnInit {
   state: any
   Formgroup: any;
 
+  alert = false;
+  alert1 = false;
+
 
 
   // @Output() closeModalEvent = new EventEmitter<boolean>();
@@ -68,10 +71,12 @@ export class HeaderComponent implements OnInit {
     if (this.myForm.valid) {
       this.authservice.onLogin(this.myForm.value);
       // localStorage.getItem('token')
-     
+    
     }
+    
     else{
-      alert('input fields correctly')
+      // alert('input fields correctly')
+      this.alert = true;
     }
     this.myForm.reset();
 
@@ -84,6 +89,8 @@ export class HeaderComponent implements OnInit {
     // this.router.navigateByUrl('login')
 
    return localStorage.getItem('currentUser');
+   this.alert1 = true;
+
 
   }
 
