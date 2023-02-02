@@ -43,6 +43,8 @@ export class FlightBookingComponent implements OnInit {
   dat: any
   search: any
   products: any
+  productsround: any
+
   productsfare: any
   prod: any
   productdata: any
@@ -72,7 +74,7 @@ export class FlightBookingComponent implements OnInit {
     this.activeroute.params.subscribe((data: any) => {
       this.productdata = data
     })
-    this.flightsearch.searchFlights(this.productdata).subscribe((item: any) => {
+    this.flightsearch.searchFlights3(this.productdata).subscribe((item: any) => {
       this.productnumber = item.flights
     })
 
@@ -112,14 +114,14 @@ export class FlightBookingComponent implements OnInit {
   searchFlights() {
     this.isloading = true
 
-    console.log(this.myForm.value);
+    // console.log(this.myForm.value);
 
     this.flightsearch.searchFlights(this.myForm.value).subscribe((data: any) => {
 
       this.isloading = false
 
       console.log(data);
-      localStorage.setItem('flights', data.flightDetails)
+      console.log(data.flights);
 
       this.products = data.flights
 
@@ -130,13 +132,16 @@ export class FlightBookingComponent implements OnInit {
       this.isloading = false
 
 
-      //  this.route.navigateByUrl('')
+
 
     })
-      // this.search = this.flightsearch.searchResults
-      // this.http.post(this.myForm.value)
+
     )
   }
+
+
+
+
   searchroundtrip() {
     this.isloading = true
     this.flightsearch.searchFlights(this.returnform.value).subscribe((data: any) => {
@@ -146,7 +151,7 @@ export class FlightBookingComponent implements OnInit {
       console.log(data);
       localStorage.setItem('flights', data.flightDetails)
 
-      this.products = data.flights
+      this.productsround = data.flights
 
 
     }, ((err: any) => {

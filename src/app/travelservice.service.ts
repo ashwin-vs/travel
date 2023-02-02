@@ -24,9 +24,7 @@ export class TravelserviceService {
   //     catchError(this.err));
   // }
   searchFlights(dat: any) {
-    console.log(`----------`);
-    console.log(`----------`);
-    console.log(`----------`);
+    
     
     console.log(dat);
 
@@ -41,6 +39,25 @@ export class TravelserviceService {
   return this.http.post<any>(baseurl,dat);
   }
 
+
+
+
+  searchFlights3(dat: any) {
+    
+    
+    console.log(dat);
+
+    // this.http.post<any>('https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights', dat).subscribe((data) => {
+
+    //    this.searchResults = data.flights
+    //   console.log(this.searchResults);
+    //   return this.searchResults;
+
+    // })
+  const baseurl='https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights';
+  return this.http.post<any>(baseurl,dat);
+  }
+  
   
   viewproduct(FareSourceCode: any) {
     const baseurl = 'https://travelsitenode.onrender.com/api/v1/mystifly/revalidateFlights/id'+FareSourceCode
