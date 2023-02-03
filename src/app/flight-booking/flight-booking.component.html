@@ -142,7 +142,7 @@
                                 <!-- <li class="w-100 pt-2 pt-lg-0"> <input id="return_date" formControlName="ADT"
                                         name="DepartureDateTime1" type="number" class="form-control su  ">
                                 </li> -->
-                                <li class="w-100 pt-2 pt-lg-0">
+                                <li class="w-100 pt-2 m-0 pt-lg-0">
                                     <!-- <button  [disabled]="isloading" type="submit" class="btn btna  w-100">Search</button> -->
                                     <button [disabled]="isloading" class="btn btna  w-100" type="submit">
                                         <span *ngIf="isloading" class="spinner-border spinner-border-sm" role="status"
@@ -189,7 +189,7 @@
                                         formControlName="ADT" type="text" class="form-control su ">
                                 </li>
 
-                                <li class="w-100 pt-2 pt-lg-0">
+                                <li class="w-100 pt-2 m-0 pt-lg-0">
                                     <button [disabled]="isloading" class="btn btna  w-100" type="submit">
                                         <span *ngIf="isloading" class="spinner-border spinner-border-sm" role="status"
                                             aria-hidden="true"></span>
@@ -268,12 +268,11 @@
 </div>
 
 
-<!-- || productnumber -->
+<!-- oneway -->
 
+<!-- || productnumber -->
 <div *ngFor="let product of products " class="container px-lg-5 pb-2">
-    <!-- *ngIf=" searchFlights()" -->
-    <!-- *ngFor="let searc of search" -->
-    <!-- *ngFor="let product of products; let i=index" -->
+   
 
     <div class="table-responsive vv ">
         <table class="table table-borderless">
@@ -282,7 +281,7 @@
                     <th scope="col">Airline</th>
                     <th scope="col">Depart</th>
                     <th scope="col">Stops</th>
-                    <th scope="col">Arrive</th>
+                    <th scope="col">Depart</th>
                     <th scope="col">Duration</th>
 
                     <th scope="col">Price</th>
@@ -294,27 +293,27 @@
                 <tr class="">
                     <th class="" scope="row"><img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt=""></th>
                     <td>
-                        <div>{{product.flightDetails.DepartureDateTime}}</div>
+                        <!-- <div>{{product.flightDetails.DepartureDateTime}}</div> -->
                         <div class="pt-4">{{product.flightDetails.DepartureDateTime}}</div>
                     </td>
                     <td>
-                        <div>{{product.flightDetails.stops}}</div>
+                        <!-- <div>{{product.flightDetails.stops}}</div> -->
                         <div class="pt-4">{{product.flightDetails.stops}}</div>
                     </td>
                     <td>
-                        <div>{{product.flightDetails.DepartureAirportLocationCode}}</div>
+                        <!-- <div>{{product.flightDetails.DepartureAirportLocationCode}}</div> -->
                         <div class="pt-4">{{product.flightDetails.DepartureAirportLocationCode}}</div>
                     </td>
                     <td>
-                        <div> {{product.flightDetails.JourneyDuration}}<span> min</span>
-                        </div>
+                        <!-- <div> {{product.flightDetails.JourneyDuration}}<span> min</span> -->
+                        <!-- </div> -->
                         <div class="pt-4"> {{product.flightDetails.JourneyDuration}}<span> min</span></div>
                     </td>
                     <td class="">
                         <div style="font-size: 17px; font-weight: 700;">
-                            {{product.flightFare.PassengerFare[0].TotalFare}} <i style="font-size:17px;"
+                            {{product.flightFare.PassengerFare[0].TotalFare}}<i style="font-size:17px;"
                                 class="fa-solid fa-dollar-sign"></i></div>
-                        <div><a href='stepone/{{product.FareSourceCode}}' class="btn btnb btn-primary">BOOK</a>
+                        <div><a href='steponeoneway/{{product.FareSourceCode}}' class="btn btnb btn-primary">BOOK</a>
                         </div>
                     </td>
 
@@ -572,12 +571,10 @@
 
 
 
-
+<!-- ROUND TRIP OR RETURN -->
 
 <div *ngFor="let product of productsround " class="container px-lg-5 pb-2">
-    <!-- *ngIf=" searchFlights()" -->
-    <!-- *ngFor="let searc of search" -->
-    <!-- *ngFor="let product of products; let i=index" -->
+    
 
     <div class="table-responsive vv ">
         <table class="table table-borderless">
@@ -616,7 +613,7 @@
                     </td>
                     <td class="">
                         <div style="font-size: 17px; font-weight: 700;">
-                            {{product.flightFare.PassengerFare[0].TotalFare}} <i style="font-size:17px;"
+                            {{product.flightFare.PassengerFare[0].TotalFare}}<i style="font-size:17px;"
                                 class="fa-solid fa-dollar-sign"></i></div>
                         <div><a href='stepone/{{product.FareSourceCode}}' class="btn btnb btn-primary">BOOK</a>
                         </div>
@@ -632,7 +629,7 @@
 
 
         </table>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row  ">
                 <div (click)="onTabClick4('Personal Details3')" class="col-4 vb text-lg-center text-md-center m-auto ">
                     <button [class.active1]="activeTab4 == 'Personal Details3'" class="bnm "> Flight
@@ -646,7 +643,7 @@
                         details</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>

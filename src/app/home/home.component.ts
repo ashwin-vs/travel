@@ -4,7 +4,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FormControl } from '@angular/forms';
 import { TravelserviceService } from '../travelservice.service';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router,NavigationExtras } from '@angular/router';
 import { query } from '@angular/animations';
 
 
@@ -26,6 +26,9 @@ export class HomeComponent implements OnInit {
   quantity: number = 1;
   quantity1: number = 0;
   returnproducts: any
+  searchResult:any
+  searchInput:any
+  
 
 
 
@@ -72,7 +75,7 @@ export class HomeComponent implements OnInit {
   searchflight() {
     this.loading = true
     // {queryParams:{query:
-    this.flightsearch.searchFlights(this.myForm.value).subscribe((data: any) => {
+    this.flightsearch.searchFlights3(this.myForm.value).subscribe((data: any) => {
       console.log(data);
       this.route.navigate(['/flightbooking'])
 
@@ -116,18 +119,41 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  searchroundtrip() {
-    this.loading = true
-    this.flightsearch.searchFlights(this.returnform.value).subscribe((data: any) => {
-      console.log(data);
-      this.route.navigate(['/flightbooking'])
+  // searchroundtrip() {
+  //   this.loading = true
+  //   let navigationExtras: NavigationExtras = {
+  //     queryParams: { 'query': (this.returnform.value)}
 
-      this.returnproducts = data.flights
-    },((err: any) => {
-      alert('network issue please try again later')
-      this.loading = false;
-      console.log(err);})
-      )
+  //   }
+  //   this.route.navigate(['/flightbooking'],navigationExtras) 
+
+  //   this.flightsearch.searchFlights3(this.returnform.value).subscribe((data: any) => {
+  //     console.log(data);
+  //     this.route.navigate(['/flightbooking'],navigationExtras),
+
+  //     this.returnproducts = data.flights
+  //   },((err: any) => {
+  //     alert('network issue please try again later')
+  //     this.loading = false;
+  //     console.log(err);})
+  //     )
+  // }
+
+
+
+  searchroundtrip(query:KeyboardEvent){
+    if(query){
+      const element = query.target as HTMLInputElement;
+      this.flightsearch.searchFlights3(this.returnform.value).subscribe((result:any)=>{
+       
+        
+        this.searchResult=result;
+      })
+    }
+  }
+  submitSearch(val:string){
+    // console.warn(val)
+  this.route.navigate([`flightbooking/${val}`]);
   }
 
 

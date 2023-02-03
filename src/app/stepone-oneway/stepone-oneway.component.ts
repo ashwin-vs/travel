@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TravelserviceService } from '../travelservice.service';
 
-
 @Component({
-  selector: 'app-step-one',
-  templateUrl: './step-one.component.html',
-  styleUrls: ['./step-one.component.css']
+  selector: 'app-stepone-oneway',
+  templateUrl: './stepone-oneway.component.html',
+  styleUrls: ['./stepone-oneway.component.css']
 })
-export class StepOneComponent implements OnInit {
+export class SteponeOnewayComponent implements OnInit {
   productdata: any
   productnumber:any
 
@@ -23,9 +22,6 @@ export class StepOneComponent implements OnInit {
       
       this.productnumber=item.data.Data.PricedItineraries
     })
-    
-  }
-  search(){
     
   }
   steptwo() {

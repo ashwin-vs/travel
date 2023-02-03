@@ -114,48 +114,7 @@
 
 
 
-                    <ul class="form-row fs-15 mt-md-3 mt-2 mb-md-3 mb-2">
-                        <li class="col-xl-1 col-md-2 text-center mb-md-0 mb-2">
-                            <img class="bbn" src="https://i.postimg.cc/KvywXWp1/image.png" alt="">
-                        </li>
-                        <li class="col-md-2 mb-md-0 mb-2">
-                            <strong
-                                class="fw-500 d-block">{{product.OriginDestinationOptions[1].FlightSegments[0].ATAinfoRef}}</strong>
-                            Flight No -
-                            <span>{{product.OriginDestinationOptions[1].FlightSegments[0].MarketingAirlineCode}}</span>
-                            <span>{{product.OriginDestinationOptions[1].FlightSegments[0].FlightNumber}}</span>
-                            <span>{{product.OriginDestinationOptions[1].FlightSegments[0].CabinClassType}}</span>
-                            Boeing
-                            <span>{{product.OriginDestinationOptions[1].FlightSegments[0].OperatingAirline.Equipment}}</span>
-                        </li>
-                        <li class="col-xl-2 col-md-1"></li>
-                        <li class="col-xl-6 col-md-7">
-                            <div class="d-flex form-row justify-content-between align-items-center mb-md-3 mb-2">
-                                <div class="col-md-4 mb-md-0 mb-2 text-md-right">
-                                    <strong
-                                        class="fw-500 d-block">{{product.OriginDestinationOptions[1].FlightSegments[0].DepartureAirportLocationCode}}</strong>
-                                    {{product.OriginDestinationOptions[1].FlightSegments[0].DepartureDateTime}}
-                                </div>
-                                <div class="col-md-3 mb-md-0 mb-2">
-                                    <div class="d-flex flex-column align-items-center">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M10 0C4.486 0 0 4.486 0 10C0 15.514 4.486 20 10 20C15.514 20 20 15.514 20 10C20 4.486 15.514 0 10 0ZM13.293 14.707L9 10.414V4H11V9.586L14.707 13.293L13.293 14.707Z"
-                                                fill="#959595"></path>
-                                        </svg>
-                                        {{product.OriginDestinationOptions[1].FlightSegments[0].JourneyDuration}}
-                                        Minutes
-                                    </div>
-                                </div>
-                                <div class="col-md-4 text-md-left">
-                                    <strong
-                                        class="fw-500 d-block">{{product.OriginDestinationOptions[1].FlightSegments[0].ArrivalAirportLocationCode}}</strong>
-                                    {{product.OriginDestinationOptions[1].FlightSegments[0].ArrivalDateTime}}
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                   
                 </div>
                 <p class="fs-14 fw-300 mt-2 px-3"><strong class="fw-500">Note: </strong>You will have to change
                     Airport
@@ -243,8 +202,8 @@
                         <strong class="fs-13 fw-600">Cancellation fee<span class="fw-400">(per
                                 passenger)</span></strong>
                         <span
-                            class="uppercase-txt"><span>{{product.OriginDestinationOptions[0].FlightSegments[0].DepartureAirportLocationCode}}</span>-
-                            <span>{{product.OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</span>&nbsp;&nbsp;<span>{{product.OriginDestinationOptions[1].FlightSegments[0].DepartureAirportLocationCode}}</span>-<span>{{product.OriginDestinationOptions[1].FlightSegments[0].ArrivalAirportLocationCode}}</span></span>
+                            class="uppercase-txt"><span>{{product.OriginDestinationOptions.FlightSegments.DepartureAirportLocationCode}}</span>-
+                            <span>{{product.OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</span>&nbsp;&nbsp;</span>
                     </li>
                     <li class="text-left ps-0 pe-1">
                         <table class="w-100 p-0 ">
@@ -355,7 +314,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="row align-items-center pt-3 px-0 pb-3">
+                        <!-- <ul class="row align-items-center pt-3 px-0 pb-3">
                             <li class="col-md-2 mb-md-0 mb-2">
                                 <img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt="">
                             </li>
@@ -382,7 +341,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
                 </ul>
                 <div class="fs-13 fw-500 text-left bvc">

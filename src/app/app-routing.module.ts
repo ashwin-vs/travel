@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StepOneComponent } from './step-one/step-one.component';
 import { StepThreeComponent } from './step-three/step-three.component';
+import { SteponeOnewayComponent } from './stepone-oneway/stepone-oneway.component';
 import { TourPackagesComponent } from './tour-packages/tour-packages.component';
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path:'tours', component:TourPackagesComponent},
   {path:'flightbooking',component:FlightBookingComponent},
   {path:'stepone/:FareSourceCode',component:StepOneComponent},
+  {path:'steponeoneway/:FareSourceCode',component:SteponeOnewayComponent},
+
   {path:'steptwo',component:BookingtwoComponent},
   {path:'stepthree',component:StepThreeComponent},
   {path:'dashboard',component:DashboardComponent},

@@ -40,27 +40,23 @@ export class TravelserviceService {
   }
 
 
-
-
-  searchFlights3(dat: any) {
-    
-    
-    console.log(dat);
-
-    // this.http.post<any>('https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights', dat).subscribe((data) => {
-
-    //    this.searchResults = data.flights
-    //   console.log(this.searchResults);
-    //   return this.searchResults;
-
-    // })
-  const baseurl='https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights';
-  return this.http.post<any>(baseurl,dat);
+  searchFlights3(query: string) {
+    return this.http.post<any[]>(
+      'https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights',query
+    );
   }
+
+
   
+
   
   viewproduct(FareSourceCode: any) {
-    const baseurl = 'https://travelsitenode.onrender.com/api/v1/mystifly/revalidateFlights/id'+FareSourceCode
+    const baseurl = 'https://travelsitenode.onrender.com/api/v1/mystifly/revalidateFlights/'+FareSourceCode+"="
+
+    return this.http.post<any>(baseurl,FareSourceCode);
+  }
+  viewproduct2(FareSourceCode: any) {
+    const baseurl = 'https://travelsitenode.onrender.com/api/v1/mystifly/revalidateFlights/'+FareSourceCode+"="
 
     return this.http.post<any>(baseurl,FareSourceCode);
   }

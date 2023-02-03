@@ -53,6 +53,7 @@ export class FlightBookingComponent implements OnInit {
   quantity1: number = 0;
   displayval = '';
   displayval2 = '';
+  searchResult:any
 
 
 
@@ -67,16 +68,34 @@ export class FlightBookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm()
+    let query = this.activeroute.snapshot.paramMap.get('query');
+    console.warn(query);
+    query && this.flightsearch.searchFlights3(query).subscribe((result)=>{
+      this.searchResult=result;
+      
+    })
+    
     // let query = this.activeroute.snapshot.paramMap.get('query');
     // query && this.flightsearch.searchFlights(query).subscribe((data)=>{
     //   this.prod=data
     // })
-    this.activeroute.params.subscribe((data: any) => {
-      this.productdata = data
-    })
-    this.flightsearch.searchFlights3(this.productdata).subscribe((item: any) => {
-      this.productnumber = item.flights
-    })
+
+    // this.route.queryParams.subscribe(params => {
+    //   this.query = params['query'];
+    // });
+
+
+
+
+    // this.activeroute.params.subscribe((data: any) => {
+    //   this.productdata = data;
+    // });
+    // this.flightsearch.searchFlights3(this.productdata).subscribe((item: any) => {
+    //   this.productnumber = item.flights
+    // })
+    // this.flightsearch.searchFlights3(this.productdata).subscribe((data: any) => {
+    //   this.productnumber = data.flights;
+    // })
 
   }
 
@@ -123,7 +142,7 @@ export class FlightBookingComponent implements OnInit {
       console.log(data);
       console.log(data.flights);
 
-      this.products = data.flights
+      this.products = data.flights;
 
 
     }, ((err: any) => {

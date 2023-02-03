@@ -19,6 +19,7 @@ import { CancellationComponent } from './cancellation/cancellation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+import { SteponeOnewayComponent } from './stepone-oneway/stepone-oneway.component';
 
 
 
@@ -36,6 +37,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     ProfileComponent,
     SettingsComponent,
     EditprofileComponent,
+    SteponeOnewayComponent,
   ],
   imports: [
     BrowserModule,
