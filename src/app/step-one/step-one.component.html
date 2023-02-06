@@ -209,9 +209,12 @@
                     <div>(including gst)
                         <span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity}}</span>
                         {{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Code}}
+
+                        <span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[1]?.PassengerTypeQuantity?.Quantity??''}}</span>
+                        {{product.AirItineraryPricingInfo.PTC_FareBreakdowns[1]?.PassengerTypeQuantity?.Code??''}}
                     </div>
-                    <div class="pt-2"><button (click)="steptwo()"
-                            class="btn btn-primary sc5 py-1 px-3">continue</button></div>
+                    <div class="pt-2"><a href='steptwo/{{product.AirItineraryPricingInfo.FareSourceCode}}'
+                            class="btn btn-primary sc5 py-1 px-3">continue</a></div>
                 </div>
                 <div class="col-lg-6 col-md-6 text-end sc5">
                     <button class="sc6 ccy" data-bs-toggle="modal" data-bs-target="#exampleModal94">Fare
@@ -420,11 +423,16 @@
                         <ul class="bdr-b p-0">
                             <li class="text-left p-1"><strong class="fw-500">Base Fare</strong></li>
                             <li class="d-flex justify-content-between p-1"><span>Adult
-                                    ({{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerFare.EquivFare.Amount}} x <span><span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity}}</span>
-                                       </span>)</span><span>{{product.AirItineraryPricingInfo.ItinTotalFare.EquivFare.Amount}}</span>
+                                    ({{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerFare.EquivFare.Amount}}
+                                    * <span><span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity}}</span>
+                                    </span>) <br> Child
+                                    ({{product.AirItineraryPricingInfo.PTC_FareBreakdowns[1]?.PassengerFare?.EquivFare?.Amount??''}}
+                                    *
+                                    {{product.AirItineraryPricingInfo.PTC_FareBreakdowns[1]?.PassengerTypeQuantity?.Quantity??''}})</span><span>{{product.AirItineraryPricingInfo.ItinTotalFare.EquivFare.Amount}}</span>
                             </li>
                             <li class="d-flex justify-content-between p-1"><span>Airline Charges &amp;
-                                    Taxes</span><span>{{product.AirItineraryPricingInfo.ItinTotalFare.TotalTax.Amount}}</span></li>
+                                    Taxes</span><span>{{product.AirItineraryPricingInfo.ItinTotalFare.TotalTax.Amount}}</span>
+                            </li>
                             <li class="d-flex justify-content-between pw-500 pl-1 pr-1 bdr-t"><span>Airline
                                     Fare</span><span>0</span></li>
                         </ul>
@@ -437,7 +445,8 @@
 
                     <li class="d-flex mt-2 nht justify-content-between">
                         <span>Total fare</span>
-                        <span><strong>{{product.AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount}} USD</strong></span>
+                        <span><strong>{{product.AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount}}
+                                USD</strong></span>
 
                     </li>
 

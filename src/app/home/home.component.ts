@@ -76,37 +76,17 @@ export class HomeComponent implements OnInit {
     this.loading = true
     // {queryParams:{query:
     this.flightsearch.searchFlights3(this.myForm.value).subscribe((data: any) => {
+      this.loading = false
+
       console.log(data);
-      this.route.navigate(['/flightbooking'])
+      localStorage.removeItem('returnproducts');
 
       this.productss = data.flights
-      // return this.productss
-
-      // console.log(`---------------------`);
-      // console.log(`---------------------`);
-      // console.log(`---------------------`);
-
-      // console.log(data.baggageList.forEach((el: any) => {
-      //   console.log(el)
-      // }));
-
-      // let i=0
-      //  data.data.forEach((el:any)=>{
-      //  this.products=el
-      // el.OriginDestinationOptions[0].FlightSegments[0]
-      // this.value[i]=el.OriginDestinationOptions[0].FlightSegments[0]
-      // console.log(el.OriginDestinationOptions[0].FlightSegments[0]);
-
-      // this.empList.push(el.OriginDestinationOptions[0].FlightSegments[0])
-      // i++
-      // });
+      localStorage.setItem('productss',JSON.stringify(this.productss));
+      this.route.navigate(['/flightbooking'])
 
 
-      // console.log(this.empList);
-
-      // this.products = data
-      // console.log(this.products);
-      // return this.products
+      
 
 
     }, ((err: any) => {
@@ -141,15 +121,29 @@ export class HomeComponent implements OnInit {
 
 
 
-  searchroundtrip(query:KeyboardEvent){
-    if(query){
-      const element = query.target as HTMLInputElement;
-      this.flightsearch.searchFlights3(this.returnform.value).subscribe((result:any)=>{
-       
-        
-        this.searchResult=result;
-      })
-    }
+  searchroundtrip(){
+    this.loading = true
+    this.flightsearch.searchFlights3(this.returnform.value).subscribe((data: any) => {
+
+      this.loading = false
+
+      console.log(data);
+      // localStorage.setItem('flights', data.flightDetails)
+      localStorage.removeItem('productss')
+
+      this.returnproducts = data.flights
+      localStorage.setItem('returnproducts',JSON.stringify(this.returnproducts));
+      this.route.navigate(['/flightbooking'])
+
+
+    }, ((err: any) => {
+      console.log(err);
+      alert("server issue please try again later")
+      this.loading = false
+
+    })
+
+    )
   }
   submitSearch(val:string){
     // console.warn(val)

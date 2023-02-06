@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'stepone/:FareSourceCode',component:StepOneComponent},
   {path:'steponeoneway/:FareSourceCode',component:SteponeOnewayComponent},
 
-  {path:'steptwo',component:BookingtwoComponent},
+  {path:'steptwo/:FareSourceCode',component:BookingtwoComponent},
   {path:'stepthree',component:StepThreeComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'cancellation',component:CancellationComponent},

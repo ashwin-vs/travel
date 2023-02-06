@@ -35,7 +35,7 @@
 
 
 
-<div class="container px-lg-5  pt-5 ">
+<div *ngIf="data" class="container px-lg-5  pt-5 ">
     <div class="sc1 s2">
         <div class="booking-step-container booking-step-2">
             <div class="booking-step mb-4 bdr-b4">
@@ -44,7 +44,8 @@
                         <img class="bbn" src="https://i.postimg.cc/WpFWW9hK/image.png" alt="">
                     </li>
                     <li class="col-md-3 mb-md-0 mb-2">
-                        <strong class="fw-500 d-block">All Nippon Airlines</strong>
+                        <strong
+                            class="fw-500 d-block">{{data[0].OriginDestinationOptions[1].FlightSegments[0].JourneyDuration}}</strong>
                         Flight No - <span>NH 1604</span>
                     </li>
                     <li class="col-md-2 mb-md-0 mb-2">
@@ -118,58 +119,63 @@
             <div>
                 <p class="sv2">Please enter traveller's name exactly as on passport</p>
             </div>
-            <div>
-                <ul class="d-lg-flex  bdr-b4 d-block justify-content-between pb-4">
-                    <li>
-                        <p class="sv2 pt-1"><b class="sv4">Adult 1</b></p>
-                    </li>
-                    <li><select class="form-select sv4 form-select-sm" aria-label=".form-select-sm example">
-                            <option selected>Mr</option>
-                            <option value="1">Mrs</option>
+            <div *ngFor="let product of data">
+                <div>
+                    <ul class="d-lg-flex  bdr-b4 d-block justify-content-between pb-4">
+                        <li>
+                            <p class="sv2 pt-1"><b class="sv4">Adult 1</b></p>
+                        </li>
+                        <li><select class="form-select sv4 form-select-sm" aria-label=".form-select-sm example">
+                                <option selected>Mr</option>
+                                <option value="1">Mrs</option>
 
-                        </select></li>
-                    <li class="pt-2 pt-lg-0 pt-md-0"><input class="sv4 sv6 " placeholder="First name" type="text"></li>
-                    <li class="pt-2 pt-lg-0 pt-md-0"><input class="sv4 sv6" placeholder="Last name" type="text"></li>
-                    <li class="pt-2 pt-lg-0 pt-md-0"><input placeholder="Date of Birth" class="textbox-n sv4 sv6"
-                            type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"></li>
-                    <li class="pt-2 pt-lg-0 pt-md-0"><input class="sv4 sv6" placeholder="Passport NO." type="number">
-                    </li>
-                    <li class="pt-2 pt-lg-0 pt-md-0"><input placeholder="Expiry Date" class="textbox-n sv4 sv6"
-                            type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"></li>
-                </ul>
-            </div>
-            <div>
-                <ul class="d-lg-flex  d-block  ">
-                    <li>
-                        <p class="sv2 pt-1"><b class="sv4">Contact Details</b></p>
-                    </li>
-                    <li class="pe-5"></li>
-                    <li class="pt-2 pe-2 pt-lg-0 pt-md-0 "><input class="sv4 sv6" placeholder="Mobile number"
-                            type="number"></li>
-                    <li class="pt-2 pe-2 pt-lg-0 pt-md-0 "><input class="sv4 sv6 w-100" placeholder="Email address"
-                            type="email"></li>
-                    <li class="pt-2 pt-lg-0 pt-md-0 justify-content-between ">
-                        <select class="form-select sv7 sv4 form-select-sm" aria-label="Default select example">
-                            <option class="" selected>Location</option>
-                            <option value="1">Location1</option>
-                            <option value="2">Location2</option>
-                            <option value="3">Location3</option>
-                        </select>
-                    </li>
+                            </select></li>
+                        <li class="pt-2 pt-lg-0 pt-md-0"><input class="sv4 sv6 " placeholder="First name" type="text">
+                        </li>
+                        <li class="pt-2 pt-lg-0 pt-md-0"><input class="sv4 sv6" placeholder="Last name" type="text">
+                        </li>
+                        <li class="pt-2 pt-lg-0 pt-md-0"><input placeholder="Date of Birth" class="textbox-n sv4 sv6"
+                                type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"></li>
+                        <li class="pt-2 pt-lg-0 pt-md-0"><input class="sv4 sv6" placeholder="Passport NO."
+                                type="number">
+                        </li>
+                        <li class="pt-2 pt-lg-0 pt-md-0"><input placeholder="Expiry Date" class="textbox-n sv4 sv6"
+                                type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="d-lg-flex  d-block  ">
+                        <li>
+                            <p class="sv2 pt-1"><b class="sv4">Contact Details</b></p>
+                        </li>
+                        <li class="pe-5"></li>
+                        <li class="pt-2 pe-2 pt-lg-0 pt-md-0 "><input class="sv4 sv6" placeholder="Mobile number"
+                                type="number"></li>
+                        <li class="pt-2 pe-2 pt-lg-0 pt-md-0 "><input class="sv4 sv6 w-100" placeholder="Email address"
+                                type="email"></li>
+                        <li class="pt-2 pt-lg-0 pt-md-0 justify-content-between ">
+                            <select class="form-select sv7 sv4 form-select-sm" aria-label="Default select example">
+                                <option class="" selected>Location</option>
+                                <option value="1">Location1</option>
+                                <option value="2">Location2</option>
+                                <option value="3">Location3</option>
+                            </select>
+                        </li>
 
 
-                </ul>
-            </div>
-            <div>
-                <ul class="d-flex">
-                    <li class="pe-2"><b>GST</b></li>
-                    <li class="form-check cs6 py-1"><input class="form-check-input" type="checkbox" value=""
-                            id="flexCheckChecked" checked>
-                        <label class="form-check-label " for="flexCheckChecked">
-                            Use Gstin for this booking
-                        </label>
-                    </li>
-                </ul>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="d-flex">
+                        <li class="pe-2"><b>GST</b></li>
+                        <li class="form-check cs6 py-1"><input class="form-check-input" type="checkbox" value=""
+                                id="flexCheckChecked" checked>
+                            <label class="form-check-label " for="flexCheckChecked">
+                                Use Gstin for this booking
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div>
                 <button (click)="stepfour()" class="btn btn-primary px-4 py-1">continue</button>

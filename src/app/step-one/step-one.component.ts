@@ -11,6 +11,7 @@ import { TravelserviceService } from '../travelservice.service';
 export class StepOneComponent implements OnInit {
   productdata: any
   productnumber:any
+  data:any
 
   constructor(private router: Router, private activatedroute: ActivatedRoute,private travelservice:TravelserviceService) { }
 
@@ -22,12 +23,12 @@ export class StepOneComponent implements OnInit {
       console.log(item);
       
       this.productnumber=item.data.Data.PricedItineraries
+      localStorage.setItem('productdata',JSON.stringify(this.productnumber));
+
     })
     
   }
-  search(){
-    
-  }
+  
   steptwo() {
     this.router.navigateByUrl('steptwo')
   }

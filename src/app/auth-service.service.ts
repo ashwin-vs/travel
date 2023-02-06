@@ -15,7 +15,7 @@ let token: any;
 
 export class AuthServiceService implements HttpInterceptor {
   name: any
-  alert1= false
+  alert1 = false
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -45,7 +45,7 @@ export class AuthServiceService implements HttpInterceptor {
     console.log(`${(data.email, data.password)}`);
 
     // console.log(products);
-    this.http
+    return this.http
       .post<any>(
         ' https://travelsitenode.onrender.com/api/v1/user/loginUser',
         data

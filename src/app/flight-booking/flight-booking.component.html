@@ -81,7 +81,7 @@
                                 <div class="d-flex w-50 ">
                                     <button class="btn btn-primary btn-sm " type="button" (click)="minus1()"><i
                                             class="fa fa-minus"></i></button>
-                                    <input disabled class="text-center zx3" type="text" #box [value]="quantity1" min="1"
+                                    <input disabled class="text-center zx3" type="text" #box2 [value]="quantity1" min="0"
                                         max="8">
                                     <button class="btn btn-primary btn-sm" type="button" (click)="plusj()"><i
                                             class="fa fa-plus"></i></button>
@@ -139,6 +139,10 @@
                                 <li class="w-100 pt-2 pt-lg-0 d-none "> <input [(ngModel)]="quantity"
                                         formControlName="ADT" type="text" class="form-control su ">
                                 </li>
+
+                                <li class="w-100 pt-2 pt-lg-0 d-none "> <input [(ngModel)]="quantity1"
+                                    formControlName="CHD" type="text" class="form-control su ">
+                            </li>
                                 <!-- <li class="w-100 pt-2 pt-lg-0"> <input id="return_date" formControlName="ADT"
                                         name="DepartureDateTime1" type="number" class="form-control su  ">
                                 </li> -->
@@ -188,6 +192,10 @@
                                 <li class="w-100 pt-2 pt-lg-0 d-none "> <input [(ngModel)]="quantity"
                                         formControlName="ADT" type="text" class="form-control su ">
                                 </li>
+
+                                <li class="w-100 pt-2 pt-lg-0 d-none "> <input [(ngModel)]="quantity1"
+                                    formControlName="CHD" type="text" class="form-control su ">
+                            </li>
 
                                 <li class="w-100 pt-2 m-0 pt-lg-0">
                                     <button [disabled]="isloading" class="btn btna  w-100" type="submit">
@@ -271,7 +279,7 @@
 <!-- oneway -->
 
 <!-- || productnumber -->
-<div *ngFor="let product of products " class="container px-lg-5 pb-2">
+<div *ngFor="let product of products || dataoneway " class="container px-lg-5 pb-2">
    
 
     <div class="table-responsive vv ">
@@ -573,7 +581,7 @@
 
 <!-- ROUND TRIP OR RETURN -->
 
-<div *ngFor="let product of productsround " class="container px-lg-5 pb-2">
+<div *ngFor="let product of productsround || dataround??[]" class="container px-lg-5 pb-2">
     
 
     <div class="table-responsive vv ">
