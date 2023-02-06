@@ -188,6 +188,8 @@
 
 
 <!-- Modal FARE RULES -->
+
+
 <div *ngFor="let product of productnumber" class="modal fade" id="exampleModal90" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">
@@ -202,24 +204,21 @@
                         <strong class="fs-13 fw-600">Cancellation fee<span class="fw-400">(per
                                 passenger)</span></strong>
                         <span
-                            class="uppercase-txt"><span>{{product.OriginDestinationOptions.FlightSegments.DepartureAirportLocationCode}}</span>-
-                            <span>{{product.OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</span>&nbsp;&nbsp;</span>
+                            class="uppercase-txt"><span>{{product.OriginDestinationOptions[0].FlightSegments[0].DepartureAirportLocationCode}}</span>-
+                            <span>{{product.OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</span></span>
                     </li>
-                    <li class="text-left ps-0 pe-1">
+                    <li class="text-left  ps-0 pe-1">
                         <table class="w-100 p-0 ">
                             <tbody>
                                 <tr class="bdr">
                                     <td class="bg-f0f3f5 p-1" style="width: 40%;">Airline fee</td>
-                                    <td class="p-1">
+                                    <td class="p-1 ">
                                         <span><b>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PenaltiesInfo[0].Amount}}
                                             </b></span>
                                         <span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PenaltiesInfo[0].CurrencyCode}}</span>
                                     </td>
                                 </tr>
-                                <!-- <tr class="bdr">
-                                    <td class="bg-f0f3f5 p-1" style="width: 40%;">Thomas Cook Fee</td>
-                                    <td class="p-1">₹ 500</td>
-                                </tr> -->
+                                
                             </tbody>
                         </table>
                     </li>
@@ -229,22 +228,20 @@
                         <strong class="fs-13 fw-600">Date Change fee<span class="fw-400">(per passenger)</span></strong>
                         <span
                             class="uppercase-txt"><span>{{product.OriginDestinationOptions[0].FlightSegments[0].DepartureAirportLocationCode}}</span>-
-                            <span>{{product.OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</span>&nbsp;&nbsp;<span>{{product.OriginDestinationOptions[1].FlightSegments[0].DepartureAirportLocationCode}}</span>-<span>{{product.OriginDestinationOptions[1].FlightSegments[0].ArrivalAirportLocationCode}}</span></span>
+                            <span>{{product.OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</span></span>
                     </li>
                     <li class="text-left ps-0 pe-1">
                         <table class="w-100">
                             <tbody>
                                 <tr class="bdr">
                                     <td class="bg-f0f3f5 p-1" style="width: 40%;">Airline fee</td>
-                                    <td class="p-1">
+                                    <td class="p-1 ">
                                         <span><b>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PenaltiesInfo[1].Amount}}
-                                            </b></span><span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PenaltiesInfo[1].CurrencyCode}}</span>
-                                    </td>
+                                        </b></span>
+                                    <span>{{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].PenaltiesInfo[1].CurrencyCode}}</span>
+                                </td>
                                 </tr>
-                                <!-- <tr class="bdr">
-                                    <td class="bg-f0f3f5 p-1" style="width: 40%;">Thomas Cook Fee</td>
-                                    <td class="p-1">₹ 500</td>
-                                </tr> -->
+                               
                             </tbody>
                         </table>
                     </li>
@@ -314,34 +311,8 @@
                                 </ul>
                             </li>
                         </ul>
-                        <!-- <ul class="row align-items-center pt-3 px-0 pb-3">
-                            <li class="col-md-2 mb-md-0 mb-2">
-                                <img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt="">
-                            </li>
-                            <li class="col-md-2 flex-column text-left mb-md-0 mb-2">
-                                <strong>{{product.OriginDestinationOptions[1].FlightSegments[0].CabinClassText}}</strong>
-                                <span
-                                    class="uppercase-txt">{{product.OriginDestinationOptions[1].FlightSegments[0].DepartureAirportLocationCode}}
-                                    <span class="right-arrow-small arrow-000000"></span>
-                                    {{product.OriginDestinationOptions[1].FlightSegments[0].ArrivalAirportLocationCode}}</span>
-                            </li>
-                            <li class="col-md-7">
-                                <ul class="row bdr-b">
-                                    <li class="col-4 bvc">Checkin</li>
-                                    <li class="col-4">1 pcs/person</li>
-                                    <li class="col-4">
-                                        {{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].BaggageInfo[1]}}/1pcs
-                                    </li>
-                                </ul>
-                                <ul class="row">
-                                    <li class="col-4">Cabin</li>
-                                    <li class="col-4">1 pcs/person</li>
-                                    <li class="col-4">
-                                        {{product.AirItineraryPricingInfo.PTC_FareBreakdowns[0].CabinBaggageInfo[1]}}/1pcs
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul> -->
+                        
+
                     </li>
                 </ul>
                 <div class="fs-13 fw-500 text-left bvc">
