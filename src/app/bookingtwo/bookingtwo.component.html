@@ -44,24 +44,27 @@
                         <img class="bbn" src="https://i.postimg.cc/WpFWW9hK/image.png" alt="">
                     </li>
                     <li class="col-md-3 mb-md-0 mb-2">
-                        <strong
-                            class="fw-500 d-block">{{data[0].OriginDestinationOptions[1].FlightSegments[0].JourneyDuration}}</strong>
-                        Flight No - <span>NH 1604</span>
+                        <strong class="fw-500 d-block">{{data[0].OriginDestinationOptions[0].FlightSegments[0].ATAinfoRef}}</strong>
+                        Flight No - <span>{{data[0].OriginDestinationOptions[0].FlightSegments[0].MarketingAirlineCode}}</span>
+                        <span>{{data[0].OriginDestinationOptions[0].FlightSegments[0].FlightNumber}}</span>
+                        <span>{{data[0].OriginDestinationOptions[0].FlightSegments[0].CabinClassType}}</span>
                     </li>
                     <li class="col-md-2 mb-md-0 mb-2">
-                        <strong class="fw-500">KCZ</strong> 13 Nov 08:40
+                        <strong class="fw-500 d-block"><span>{{data[0].OriginDestinationOptions[0].FlightSegments[0].DepartureAirportLocationCode}}</span></strong> {{data[0].OriginDestinationOptions[0].FlightSegments[0].DepartureDateTime}}
                     </li>
                     <li class="col-md-2 mb-md-0 mb-2">
-                        <strong class="fw-500">DXB</strong> 13 Nov 08:40
+                        <strong class="fw-500 d-block">{{data[0].OriginDestinationOptions[0].FlightSegments[0].ArrivalAirportLocationCode}}</strong> {{data[0].OriginDestinationOptions[0].FlightSegments[0].ArrivalDateTime}}
+                       
+                                    
                     </li>
                     <li class="col-md-2 mb-md-0 mb-2">
-                        <div>1 stop</div>
-                        26hr 5m
+                        <div> {{data[0].OriginDestinationOptions[0].FlightSegments[0].StopQuantity}} stop</div>
+                        {{data[0].OriginDestinationOptions[0].FlightSegments[0].StopQuantityInfo.Duration}} Minutes
                     </li>
-                    <li class="col-md-2 mb-md-0 mb-2">
-                        <strong class="d-block lgt-b">RS.128389</strong>
-                        1 adult
-                        Fare Details
+                    <li class="col-md-2 mb-md-0 mb-2 ">
+                        <strong class=" lgt-b">{{data[0].AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount}} USD</strong>
+                        <!-- 1 adult
+                        Fare Details -->
                     </li>
                 </ul>
             </div>
@@ -119,7 +122,7 @@
             <div>
                 <p class="sv2">Please enter traveller's name exactly as on passport</p>
             </div>
-            <div *ngFor="let product of data">
+            <div *ngFor="let array of array">
                 <div>
                     <ul class="d-lg-flex  bdr-b4 d-block justify-content-between pb-4">
                         <li>
@@ -144,7 +147,7 @@
                     </ul>
                 </div>
                 <div>
-                    <ul class="d-lg-flex  d-block  ">
+                    <ul class="d-lg-flex   d-block  ">
                         <li>
                             <p class="sv2 pt-1"><b class="sv4">Contact Details</b></p>
                         </li>
@@ -164,18 +167,24 @@
 
 
                     </ul>
+
                 </div>
-                <div>
-                    <ul class="d-flex">
-                        <li class="pe-2"><b>GST</b></li>
-                        <li class="form-check cs6 py-1"><input class="form-check-input" type="checkbox" value=""
-                                id="flexCheckChecked" checked>
-                            <label class="form-check-label " for="flexCheckChecked">
-                                Use Gstin for this booking
-                            </label>
-                        </li>
-                    </ul>
+                <div class=" py-4">
+                    <div class="brder-dwn"></div>
+
                 </div>
+
+            </div>
+            <div>
+                <ul class="d-flex">
+                    <li class="pe-2"><b>GST</b></li>
+                    <li class="form-check cs6 py-1"><input class="form-check-input" type="checkbox" value=""
+                            id="flexCheckChecked" checked>
+                        <label class="form-check-label " for="flexCheckChecked">
+                            Use Gstin for this booking
+                        </label>
+                    </li>
+                </ul>
             </div>
             <div>
                 <button (click)="stepfour()" class="btn btn-primary px-4 py-1">continue</button>

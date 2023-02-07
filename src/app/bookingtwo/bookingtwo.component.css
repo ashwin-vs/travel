@@ -186,3 +186,10 @@ input[type="date"].full:before {
     height: 50px;
     width: 50px;
 }
+.brder-dwn{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    /* padding-top: 15px; */
+}

@@ -302,24 +302,24 @@
                     <th class="" scope="row"><img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt=""></th>
                     <td>
                         <!-- <div>{{product.flightDetails.DepartureDateTime}}</div> -->
-                        <div class="pt-4">{{product.flightDetails.DepartureDateTime}}</div>
+                        <div class="pt-4">{{product?.flightDetails?.DepartureDateTime??''}}</div>
                     </td>
                     <td>
                         <!-- <div>{{product.flightDetails.stops}}</div> -->
-                        <div class="pt-4">{{product.flightDetails.stops}}</div>
+                        <div class="pt-4">{{product?.flightDetails?.stops??''}}</div>
                     </td>
                     <td>
                         <!-- <div>{{product.flightDetails.DepartureAirportLocationCode}}</div> -->
-                        <div class="pt-4">{{product.flightDetails.DepartureAirportLocationCode}}</div>
+                        <div class="pt-4">{{product?.flightDetails?.DepartureAirportLocationCode??''}}</div>
                     </td>
                     <td>
                         <!-- <div> {{product.flightDetails.JourneyDuration}}<span> min</span> -->
                         <!-- </div> -->
-                        <div class="pt-4"> {{product.flightDetails.JourneyDuration}}<span> min</span></div>
+                        <div class="pt-4"> {{product?.flightDetails?.JourneyDuration??''}}<span> min</span></div>
                     </td>
                     <td class="">
                         <div style="font-size: 17px; font-weight: 700;">
-                            {{product.flightFare.PassengerFare[0].BaseFare}}<i style="font-size:17px;"
+                            {{product?.flightFare?.PassengerFare[0]?.BaseFare??''}}<i style="font-size:17px;"
                                 class="fa-solid fa-dollar-sign"></i></div>
                         <div><a href='steponeoneway/{{product.FareSourceCode}}' class="btn btnb btn-primary">BOOK</a>
                         </div>
@@ -335,7 +335,7 @@
 
 
         </table>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row  ">
                 <div (click)="onTabClick4('Personal Details3')" class="col-4 vb text-lg-center text-md-center m-auto ">
                     <button [class.active1]="activeTab4 == 'Personal Details3'" class="bnm "> Flight
@@ -349,227 +349,11 @@
                         details</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>
-    <div *ngIf="activeTab4 == 'Personal Details3'" class=" pb-4 container a12 ">
-        <div class="text-end bvc"> <button (click)="onTabClick4(prod)" type="button" class="btn-close bvc">
-            </button>
-        </div>
-        <div class="row pt-2">
-            <div class="col-lg-6">
-                <div class="bvc">
-                    <span class="bvc">Kochi</span>-><span class="bvc">Dubai</span><span class="bvc">friday 18
-                        nov,2022</span><span class="bvc">reaches next day</span>
-                </div>
-
-            </div>
-            <div class="col-lg-6 text-lg-end text-start">
-                <div class="bvc">
-                    <span class="bvc">Total duration</span><span class="bvc">22 hr 45 min</span>
-                </div>
-
-            </div>
-        </div>
-        <div class="row pt-2 bvc">
-            <div class="col-lg-4 bvc">
-                <div><b>Japan Airlines</b></div>
-                <div>flight no - <span>JL 49 Economy Boeing 73 H</span></div>
-            </div>
-            <div class="col-lg-4 pt-1 pt-lg-0 text-lg-center text-start bvc">
-                <div><b>KCZ 11:45</b></div>
-                <div>Friday 18 nov,2022 kma,kochi</div>
-            </div>
-            <div class="col-lg-4 pt-1 pt-lg-0 bvc">
-                <div><b>13:00HND</b></div>
-                <div>fri 18 nov,2022 Tokyo International,Tokyo Haneda Terminal 1</div>
-            </div>
-        </div>
-        <div class="row pt-4 bvc">
-            <div class="col-12">
-                <p class="bvc">note you will have to change airport while travelling</p>
-            </div>
-        </div>
-        <div class="row pt-2 bvc">
-            <div class="col-lg-6 bvc">
-                Dubai -> kochi Saturday, 26 Nov, 2022 Arrives next day
-            </div>
-            <div class="col-lg-6 text-lg-end text-start pt-1 pt-lg-0 bvc">
-                Total Duration: 24hr 5m
-            </div>
-
-
-        </div>
-    </div>
-
-
-    <!-- tab 2 -->
-    <div *ngIf="activeTab4 == 'Personal Details4'" class="pb-4 container  a12">
-        <div class="text-end bvc"> <button (click)="onTabClick4('Personal Details8')" type="button"
-                class="btn-close bvc"> </button></div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <ul>
-                    <li class="d-flex justify-content-between bvc p-1 bdr-b">
-                        <strong class="fs-14 fw-600">Fare Breakup <span class="fw-400">(in ₹)</span></strong>
-                        <span>1 adult</span>
-                    </li>
-
-                    <li class="p-0 text-start">
-                        <ul class="bdr-b p-0">
-                            <li class="text-left p-1"><strong class="fw-500">Base Fare</strong></li>
-                            <li class="d-flex justify-content-between p-1"><span>Adult
-                                    (38748x1)</span><span>38748</span></li>
-                            <li class="d-flex justify-content-between p-1"><span>Airline Charges &amp;
-                                    Taxes</span><span>5070</span></li>
-                            <li class="d-flex justify-content-between pw-500 pl-1 pr-1 bdr-t"><span>Airline
-                                    Fare</span><span>43818</span></li>
-                        </ul>
-                        <ul class="bdr-b p-0">
-                            <li class="d-flex justify-content-between p-1"><span>Discount</span><span>(-)0</span>
-                            </li>
-                            <li class="d-flex justify-content-between pl-1 pr-1 bdr-t"><span>Net Thomas Cook
-                                    Charges</span><span>0</span></li>
-                        </ul>
-                    </li>
-
-                    <li class="d-flex mt-2 nht justify-content-between">
-                        <span>Total fare</span>
-                        <span><strong>₹ 43,818</strong></span>
-
-                    </li>
-
-
-                </ul>
-
-
-            </div>
-            <div class="col-md-7">
-                <ul>
-                    <li class="d-flex align-items-baseline p-1 bdr-b">
-                        <strong class="fs-14 fw-600">Fare Rules </strong>
-                        <span
-                            class="uppercase-txt text-white bg-success border-radius-5 ml-2 pl-1 pr-1">Refundable</span>
-                    </li>
-                    <li>
-                        <ul class="p-0">
-                            <li class="d-flex justify-content-between p-1 mt-1 p-0">
-                                <strong class="fs-13 fw-600">Cancellation fee<span class="fw-400">(per
-                                        passenger)</span></strong>
-                                <span class="uppercase-txt">cok-dxb</span>
-                            </li>
-                            <li class="text-left ps-0 pe-1">
-                                <table class="w-100 p-0 ">
-                                    <tbody>
-                                        <tr class="bdr">
-                                            <td class="bg-f0f3f5 p-1" style="width: 40%;">Airline fee</td>
-                                            <td class="p-1">₹ 500</td>
-                                        </tr>
-                                        <tr class="bdr">
-                                            <td class="bg-f0f3f5 p-1" style="width: 40%;">Thomas Cook Fee</td>
-                                            <td class="p-1">₹ 500</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </li>
-                        </ul>
-                        <ul class="p-0">
-                            <li class="d-flex justify-content-between p-1 mt-1">
-                                <strong class="fs-13 fw-600">Date Change fee<span class="fw-400">(per
-                                        passenger)</span></strong>
-                                <span class="uppercase-txt">cok-dxb</span>
-                            </li>
-                            <li class="text-left ps-0 pe-1">
-                                <table class="w-100">
-                                    <tbody>
-                                        <tr class="bdr">
-                                            <td class="bg-f0f3f5 p-1" style="width: 40%;">Airline fee</td>
-                                            <td class="p-1">₹ 500</td>
-                                        </tr>
-                                        <tr class="bdr">
-                                            <td class="bg-f0f3f5 p-1" style="width: 40%;">Thomas Cook Fee</td>
-                                            <td class="p-1">₹ 500</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- tab-3 -->
-
-    <div *ngIf="activeTab4 == 'Personal Details5'" class="a12">
-        <div class="tab-pane p-lg-5 pt-5 p-3 pane3 active">
-            <div class="text-end bvc"> <button (click)="onTabClick4('Personal Details8')" type="button"
-                    class="btn-close bvc"> </button></div>
-            <ul class="fs-13">
-                <li class="text-left p-1 bdr-b">
-                    Cochin <span class="right-arrow-small arrow-000000">-></span> Cochin
-                </li>
-                <li class="p-0">
-                    <ul class="row align-items-center pt-3 px-0 pb-3">
-                        <li class="col-md-1 mb-md-0 mb-2">
-                            <img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt="">
-                        </li>
-                        <li class="col-md-2 flex-column text-left mb-md-0 mb-2">
-                            <strong>Emirates</strong>
-                            <span class="uppercase-txt">cok <span class="right-arrow-small arrow-000000"></span>
-                                dxb</span>
-                        </li>
-                        <li class="col-md-7">
-                            <ul class="row bdr-b">
-                                <li class="col-4">Checkin</li>
-                                <li class="col-4">1 pcs/person</li>
-                                <li class="col-4">20 kgs/1pcs</li>
-                            </ul>
-                            <ul class="row">
-                                <li class="col-4">Cabin</li>
-                                <li class="col-4">1 pcs/person</li>
-                                <li class="col-4">7 kgs/1pcs</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="row align-items-center pt-3 px-0 pb-3">
-                        <li class="col-md-1 mb-md-0 mb-2">
-                            <img src="https://i.postimg.cc/Jz5FX5YZ/image.png" alt="">
-                        </li>
-                        <li class="col-md-2 flex-column text-left mb-md-0 mb-2">
-                            <strong>Emirates</strong>
-                            <span class="uppercase-txt">cok <span class="right-arrow-small arrow-000000"></span>
-                                dxb</span>
-                        </li>
-                        <li class="col-md-7">
-                            <ul class="row bdr-b">
-                                <li class="col-4 bvc">Checkin</li>
-                                <li class="col-4">1 pcs/person</li>
-                                <li class="col-4">20 kgs/1pcs</li>
-                            </ul>
-                            <ul class="row">
-                                <li class="col-4">Cabin</li>
-                                <li class="col-4">1 pcs/person</li>
-                                <li class="col-4">7 kgs/1pcs</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="fs-13 fw-500 text-left bvc">
-                <p class="bvc"><strong>Note: </strong>The information provided above is as retrieved from the
-                    airline
-                    reservation system. Thomas Cook does not guarantee the authenticity of this information. The
-                    baggage
-                    allowance may vary according to stop-overs, connecting flights and changes in airline rules.
-                    Customer is adviced to verify the same from the airline directly before departure.</p>
-            </div>
-        </div>
-    </div>
-
+    
 
 </div>
 
@@ -581,7 +365,7 @@
 
 <!-- ROUND TRIP OR RETURN -->
 
-<div *ngFor="let product of productsround || dataround??[]" class="container px-lg-5 pb-2">
+<div *ngFor="let product of productsround || dataround" class="container px-lg-5 pb-2">
     
 
     <div class="table-responsive vv ">

@@ -8,24 +8,40 @@ import { TravelserviceService } from '../travelservice.service';
   templateUrl: './bookingtwo.component.html',
   styleUrls: ['./bookingtwo.component.css']
 })
-export class BookingtwoComponent implements OnInit {
-username = '';
-productdata: any
-productnumber:any
-data:any
-datafield:any
 
-  constructor(private route:Router,private travelservice:TravelserviceService, 
-    private apiService:AuthServiceService,private router: Router, 
+export class BookingtwoComponent implements OnInit {
+  username = '';
+  productdata: any
+  productnumber: any
+  data: any
+  datafield: any
+  array: any
+  arrayvalue: any
+
+
+
+  constructor(private route: Router, private travelservice: TravelserviceService,
+    private apiService: AuthServiceService, private router: Router,
     private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.arrayvalue = localStorage.getItem('productvalue')
+
+    const value = this.arrayvalue
+    const arr = Array.from({ length: value }, (_, index) => index + 1)
+    this.array = arr;
+
+
+    console.log(arr);
     this.data = JSON.parse(localStorage.getItem('productdata') || '{}');
-    console.log(this.data);
-    
+    // console.log(this.data);
+
     // this.datafield = this.data[0].AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity
   }
-  stepfour(){
+  stepfour() {
     this.route.navigateByUrl('stepthree')
   }
+
+
+
 }

@@ -70,8 +70,8 @@ export class FlightBookingComponent implements OnInit {
   ngOnInit(): void {
     this.initForm()
     
-    this.dataround = JSON.parse(localStorage.getItem('returnproducts') || '{}');
-    this.dataoneway = JSON.parse(localStorage.getItem('productss') || '{}');
+    this.dataround = JSON.parse(localStorage.getItem('returnproducts') || '[]');
+    this.dataoneway = JSON.parse(localStorage.getItem('productss') || '[]');
 
 
   }

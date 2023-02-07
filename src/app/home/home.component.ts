@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
   searchResult:any
   searchInput:any
   
+saveValue1:any
+saveValue2:any
 
 
 
@@ -124,6 +126,8 @@ export class HomeComponent implements OnInit {
   searchroundtrip(){
     this.loading = true
     this.flightsearch.searchFlights3(this.returnform.value).subscribe((data: any) => {
+      console.log(data);
+      
 
       this.loading = false
 

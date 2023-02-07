@@ -41,6 +41,8 @@ export class TravelserviceService {
 
 
   searchFlights3(query: string) {
+    console.log(query);
+    
     return this.http.post<any[]>(
       'https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights',query
     );
