@@ -34,9 +34,6 @@ export class BookingtwoComponent implements OnInit {
 
     console.log(arr);
     this.data = JSON.parse(localStorage.getItem('productdata') || '{}');
-    // console.log(this.data);
-
-    // this.datafield = this.data[0].AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity
   }
   stepfour() {
     this.route.navigateByUrl('stepthree')

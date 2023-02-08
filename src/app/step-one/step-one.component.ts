@@ -30,9 +30,8 @@ export class StepOneComponent implements OnInit {
       this.productnumber=item.data.Data.PricedItineraries
      localStorage.setItem('productdata',JSON.stringify(this.productnumber));
 
-      // this.product=item
+      this.product=item
       
-      console.log(this.product.data.Data.PricedItineraries[0].AirItineraryPricingInfo.PTC_FareBreakdowns[1]===undefined );
       if(this.product.data.Data.PricedItineraries[0].AirItineraryPricingInfo.PTC_FareBreakdowns[1]===undefined  ){
         console.log(`---`);
         this.adt=this.product.data.Data.PricedItineraries[0].AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity
@@ -53,6 +52,8 @@ export class StepOneComponent implements OnInit {
         this.adt=this.product.data.Data.PricedItineraries[0].AirItineraryPricingInfo.PTC_FareBreakdowns[0].PassengerTypeQuantity.Quantity
         console.log(this.chd,this.adt);
         this.value=this.adt+this.chd
+        console.log(this.value);
+        
         localStorage.setItem('productvalue',this.value)
     
       }

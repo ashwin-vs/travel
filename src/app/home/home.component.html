@@ -163,10 +163,11 @@
                         <div class="container text-center col-lg-12">
 
                             <ul class="d-lg-flex  d-block  mk col-lg-12">
-                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="OriginLocationCode" type="text"
+                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="OriginLocationCode" list="datalistOptions" id="exampleDataList" type="text"
                                         class=" form-control su  " placeholder="Departing from">
+                                        
                                 </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="DestinationLocationCode"
+                                <li class="w-100 pt-2 pt-lg-0"> <input formControlName="DestinationLocationCode" list="datalistOptions" id="exampleDataList"
                                         type="text" class="form-control su  " placeholder="Going to">
                                 </li>
                                 <li class="w-100 pt-2 pt-lg-0"> <input formControlName="DepartureDateTime" type="date"
@@ -199,17 +200,26 @@
                     </form>
                 </div>
 
+
+                <datalist id="datalistOptions">
+                    <option value="BLR"><span>banglore</span>
+                    <option value="DXB"><span>Dubai</span>
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                  </datalist>
+
                 <!-- return fligts or round trip -->
 
                 <div *ngIf="activeTab == 'return'" class="w-100 px-4">
                     <form [formGroup]="returnform" (ngSubmit)="searchroundtrip()">
                         <div class="container text-center">
                             <ul class="d-lg-flex  d-block  mk col-lg-12">
-                                <li class="w-100 pt-2 pt-lg-0"> <input #box (keyup)="getvalue(box.value)" type="text"
+                                <li class="w-100 pt-2 pt-lg-0"> <input #box (keyup)="getvalue(box.value)" type="text" list="datalistOptions" id="exampleDataList"
                                         formControlName="OriginLocationCode" class=" form-control su  "
                                         placeholder="Departing from">
                                 </li>
-                                <li class="w-100 pt-2 pt-lg-0"> <input #box2 (keyup)="getvalue2(box2.value)" type="text"
+                                <li class="w-100 pt-2 pt-lg-0"> <input #box2 (keyup)="getvalue2(box2.value)" type="text" list="datalistOptions" id="exampleDataList"
                                         formControlName="DestinationLocationCode" class="form-control su  "
                                         placeholder="Going to">
                                 </li>
