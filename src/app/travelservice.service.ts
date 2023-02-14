@@ -27,6 +27,9 @@ export class TravelserviceService {
     
     
     console.log(dat);
+    // const headers = new Headers({
+    //   'Authorization': 'Bearer ' + your_bearer_token + ' ' + your_session_id,
+    // });
 
     // this.http.post<any>('https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights', dat).subscribe((data) => {
 
@@ -35,7 +38,10 @@ export class TravelserviceService {
     //   return this.searchResults;
 
     // })
-  const baseurl='https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights';
+
+    // https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights
+
+  const baseurl='https://restapidemo.myfarebox.com/api/v1/Search/Flight';
   return this.http.post<any>(baseurl,dat);
   }
 

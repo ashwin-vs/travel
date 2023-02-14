@@ -38,6 +38,10 @@ export class BookingtwoComponent implements OnInit {
   stepfour() {
     this.route.navigateByUrl('stepthree')
   }
+  login(){
+    localStorage.getItem('currentUser');
+
+  }
 
 
 
