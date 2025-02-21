@@ -41,7 +41,7 @@ export class TravelserviceService {
 
     // https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights
 
-  const baseurl='https://restapidemo.myfarebox.com/api/v1/Search/Flight';
+  const baseurl='https://travelsitenode.onrender.com/api/v1/mystifly/searchFlights';
   return this.http.post<any>(baseurl,dat);
   }
 
